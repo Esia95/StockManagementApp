@@ -1,6 +1,28 @@
 @import 'bootstrap';
 
 body {
-  background-color: gray;
+  background-color: rgb(100, 100, 100);
 }
 
+.navbar {
+  background-color: #5b96ce;
+}
+
+.nav-link,
+.navbar-brand {
+  color: black;
+  
+}
+
+.btn {
+  background-color: #5b96ce;
+}
+
+.btn:hover {
+  color: rgb(45, 94, 201);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.text-center {
+  padding-top: 20px;
+}

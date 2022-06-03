@@ -1,20 +1,11 @@
-<div class='image'>
-  <LinkTo @route='home.orders'>
-    <span><img
-        src='assets\images/zamowienia.jpg'
-        class='rounded float-start col-5'
-        alt='zamowienia'
-        type='button'
-      />
-    </span>
-  </LinkTo>
-  <LinkTo @route='home.warehouse'>
-    <span>
-      <img
-        src='assets\images/magazyn.jpg'
-        class='rounded float-end col-5'
-        alt='magazyn'
-      />
-    </span>
-  </LinkTo>
-</div>
+<LinkTo @route='home.orders'><button
+    type='button'
+    class='btn btn-lg fs-2'
+  >ZAMÓWIENIA</button></LinkTo>
+
+<LinkTo @route='home.warehouse'><button
+    type='button'
+    class='btn btn-lg fs-2'
+  >MAGAZYN</button></LinkTo>\
+
+{{! form-control }}
