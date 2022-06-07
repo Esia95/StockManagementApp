@@ -1,0 +1,12 @@
+{{#each this.row as |row|}}
+
+  <tbody>
+    <tr>
+      <td>{{row.name}}</td>
+      <td>{{row.count}} {{row.type}}</td>
+      <td>{{row.target}}</td>
+    </tr>
+  </tbody>
+{{/each}}
+
+<Table::TableFirm::Row::Inputs />
