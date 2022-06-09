@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
-export default class ObservationFormComponent extends Component {
+export default class TableTableFormComponent extends Component {
   @service store;
   @tracked name = '';
   @tracked count = '';
