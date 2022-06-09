@@ -24,5 +24,23 @@ export default class ApplicationRoute extends Route {
 
     await user1Model.save();
     await user2Model.save();
+
+    const item1 = {
+      name: 'Płyn do szyb',
+      count: '2szt',
+      target: 'Przybyły',
+    };
+
+    const item2 = {
+      name: 'Rękawiczki',
+      count: '3op',
+      target: 'HQ',
+    };
+
+    const item1Model = this.store.createRecord('table', item1);
+    const item2Model = this.store.createRecord('table', item2);
+
+    await item1Model.save();
+    await item2Model.save();
   }
 }

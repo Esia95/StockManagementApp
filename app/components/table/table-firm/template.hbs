@@ -1,4 +1,3 @@
-{{! template-lint-disable table-groups }}
 <table class='table table-striped'>
   <thead>
     <tr>
@@ -8,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each @selleo as |table|}}
+    {{#each @tables as |table|}}
       <tr>
         <td>{{table.name}}</td>
         <td>{{table.count}}</td>
