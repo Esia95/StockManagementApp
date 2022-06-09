@@ -1,3 +1,11 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default class PlaceSelleoRoute extends Route {}
+export default class SelleoRoute extends Route {
+  @service store;
+
+  model() {
+    const selleo = this.store.findAll('table');
+    return selleo;
+  }
+}

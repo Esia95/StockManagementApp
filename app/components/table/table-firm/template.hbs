@@ -7,5 +7,15 @@
       <th scope='col'>Miejsce</th>
     </tr>
   </thead>
-  <Table::TableFirm::Row />
+  <tbody>
+    {{#each @selleo as |table|}}
+      <tr>
+        <td>{{table.name}}</td>
+        <td>{{table.count}}</td>
+        <td>{{table.target}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
 </table>
+
+<Table::TableForm />
