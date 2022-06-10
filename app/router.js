@@ -10,9 +10,9 @@ Router.map(function () {
   this.route('home', { path: '/' }, function () {
     this.route('orders');
     this.route('warehouse');
-    this.route('bluecrest');
     this.route('firm');
     this.route('selleo');
+    this.route('bluecrest');
   });
   this.route('login');
   this.route('register');
