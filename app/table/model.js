@@ -4,5 +4,6 @@ export default class TableModel extends Model {
   @attr('string') name;
   @attr('string') count;
   @attr('string') target;
+
   @belongsTo('user') owner;
 }
