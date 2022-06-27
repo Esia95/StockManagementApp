@@ -5,17 +5,17 @@ import { inject as service } from '@ember/service';
 
 export default class TableTableFormComponent extends Component {
   @service store;
-  @tracked name = '';
+  @tracked selected = '';
   @tracked count = '';
   @tracked target = '';
 
   get isEmptyField() {
-    return !(this.name && this.count && this.target);
+    return !(this.selected && this.count && this.target);
   }
 
   @action
   onNameChange(event) {
-    this.name = event.target.value;
+    this.articles = event.target.value;
   }
 
   @action
@@ -31,7 +31,7 @@ export default class TableTableFormComponent extends Component {
   @action
   async onSave() {
     const order = {
-      name: this.name,
+      articles: this.selected,
       count: this.count,
       target: this.target,
     };
@@ -42,8 +42,25 @@ export default class TableTableFormComponent extends Component {
   }
   @action
   clear() {
-    this.name = '';
+    this.selected = '';
     this.count = '';
     this.target = '';
   }
+
+  articles = [
+    'Domestos',
+    'Gąbki do mycia naczyń',
+    'Krążki żelowe',
+    'Mydło do rąk',
+    'Nabłyszczacz do zmywarki',
+    'Odświeżacz powietrza',
+    'Papier toaletowy',
+    'Płyn do mycia naczyń',
+    'Ręczniki papierowe',
+    'Sól do zmywarki',
+    'Tabletki do zmywarki',
+    'Worki 60l',
+    'Worki 25l',
+    'Zapach w płynie',
+  ];
 }
