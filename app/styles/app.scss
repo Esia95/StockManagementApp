@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import "ember-power-select";
 
 body {
   background-color: rgb(235, 230, 230);
@@ -17,11 +18,16 @@ background-image: linear-gradient(243deg, rgba(21, 67, 109, 1) 17%, rgba(25, 118
 
 .btn {
   background-color: #1976cf;
+  margin: 5px;
 }
 
 .btn:hover {
   color: rgb(0, 30, 94);
   box-shadow: 0 12px 16px 0 rgba(12, 12, 12, 0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn-primary {
+  color: black;
 }
 
 .text-center {
@@ -31,5 +37,8 @@ background-image: linear-gradient(243deg, rgba(21, 67, 109, 1) 17%, rgba(25, 118
 
 .container {
   padding-top: 20px;
+  text-align: -webkit-center;
 }
 
+
+@import "ember-power-select";
