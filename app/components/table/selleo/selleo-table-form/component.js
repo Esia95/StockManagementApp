@@ -15,13 +15,11 @@ export default class TableTableFormComponent extends Component {
   @action
   onNameChange(event) {
     this.name = event.target.value;
-    console.log(this.name);
   }
 
   @action
   onCountChange(event) {
     this.count = event.target.value;
-    console.log(this.count);
   }
 
   @action

@@ -5,17 +5,17 @@ import { inject as service } from '@ember/service';
 
 export default class TableBluecrestBluecrestFormComponent extends Component {
   @service store;
-  @tracked name = '';
+  @tracked selected = '';
   @tracked count = '';
 
   get isEmptyField() {
-    return !(this.name && this.count);
+    return !(this.selected && this.count);
   }
 
   @action
   onNameChange(event) {
-    this.name = event.target.value;
-    console.log(this.name);
+    this.articles = event.target.value;
+    console.log(this.articles);
   }
 
   @action
@@ -27,7 +27,7 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
   @action
   async onSave() {
     const order = {
-      name: this.name,
+      articles: this.selected,
       count: this.count,
     };
 
@@ -37,7 +37,22 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
   }
   @action
   clear() {
-    this.name = '';
+    this.selected = '';
     this.count = '';
   }
+
+  articles = [
+    'Domestos',
+    'Gąbki do mycia naczyń',
+    'Mydło do rąk',
+    'Odświeżacz powietrza',
+    'Papier toaletowy',
+    'Płyn do mycia naczyń',
+    'Ręczniki papierowe',
+    'Sól do zmywarki',
+    'Tabletki do zmywarki',
+    'Worki 60l',
+    'Worki 25',
+    'Zapach w płynie',
+  ];
 }
