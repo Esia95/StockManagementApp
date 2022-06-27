@@ -7,9 +7,10 @@ export default class TableTableFormComponent extends Component {
   @service store;
   @tracked selected = '';
   @tracked count = '';
+  @tracked target = '';
 
   get isEmptyField() {
-    return !(this.selected && this.count);
+    return !(this.selected && this.count && this.target);
   }
 
   @action
@@ -23,10 +24,17 @@ export default class TableTableFormComponent extends Component {
   }
 
   @action
+  onTargetChange(event) {
+    this.target = event.target.value;
+    console.log(this.target);
+  }
+
+  @action
   async onSave() {
     const order = {
       articles: this.selected,
       count: this.count,
+      target: this.target,
     };
 
     const stockModel = this.store.createRecord('selleo', order);
@@ -37,6 +45,7 @@ export default class TableTableFormComponent extends Component {
   clear() {
     this.selected = '';
     this.count = '';
+    this.target = '';
   }
 
   articles = [
