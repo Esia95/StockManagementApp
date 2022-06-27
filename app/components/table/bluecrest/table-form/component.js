@@ -15,13 +15,11 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
   @action
   onNameChange(event) {
     this.articles = event.target.value;
-    console.log(this.articles);
   }
 
   @action
   onCountChange(event) {
     this.count = event.target.value;
-    console.log(this.count);
   }
 
   @action
@@ -44,7 +42,9 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
   articles = [
     'Domestos',
     'Gąbki do mycia naczyń',
+    'Krążki żelowe',
     'Mydło do rąk',
+    'Nabłyszczacz do zmywarki',
     'Odświeżacz powietrza',
     'Papier toaletowy',
     'Płyn do mycia naczyń',
@@ -52,7 +52,7 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
     'Sól do zmywarki',
     'Tabletki do zmywarki',
     'Worki 60l',
-    'Worki 25',
+    'Worki 25l',
     'Zapach w płynie',
   ];
 }
