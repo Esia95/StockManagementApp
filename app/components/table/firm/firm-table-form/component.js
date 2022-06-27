@@ -48,19 +48,12 @@ export default class TableTableFormComponent extends Component {
   }
 
   articles = [
-    'Domestos',
-    'Gąbki do mycia naczyń',
-    'Krążki żelowe',
-    'Mydło do rąk',
-    'Nabłyszczacz do zmywarki',
-    'Odświeżacz powietrza',
-    'Papier toaletowy',
-    'Płyn do mycia naczyń',
-    'Ręczniki papierowe',
-    'Sól do zmywarki',
-    'Tabletki do zmywarki',
-    'Worki 60l',
-    'Worki 25l',
-    'Zapach w płynie',
+    'Płyn uniwersalny',
+    'Płyn do czyszczenia toalet',
+    'Płyn do podłóg',
+    'Płyn do szyb',
+    'Rękawiczki',
+    'Szmatki fioletowe Vileda',
+    'Szmatki żółte Vileda',
   ];
 }
