@@ -8,9 +8,10 @@ export default class TableTableFormComponent extends Component {
   @tracked selected = '';
   @tracked count = '';
   @tracked target = '';
+  @tracked chosen = '';
 
   get isEmptyField() {
-    return !(this.selected && this.count && this.target);
+    return !(this.selected && this.count && this.chosen);
   }
 
   @action
@@ -33,7 +34,7 @@ export default class TableTableFormComponent extends Component {
     const order = {
       articles: this.selected,
       count: this.count,
-      target: this.target,
+      target: this.chosen,
     };
 
     const stockModel = this.store.createRecord('table', order);
@@ -44,7 +45,7 @@ export default class TableTableFormComponent extends Component {
   clear() {
     this.selected = '';
     this.count = '';
-    this.target = '';
+    this.chosen = '';
   }
 
   articles = [
@@ -56,4 +57,6 @@ export default class TableTableFormComponent extends Component {
     'Szmatki fioletowe Vileda',
     'Szmatki żółte Vileda',
   ];
+
+  target = ['Bluecrest', 'HQ', 'Przybyły'];
 }
