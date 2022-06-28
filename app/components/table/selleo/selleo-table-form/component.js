@@ -14,18 +14,8 @@ export default class TableTableFormComponent extends Component {
   }
 
   @action
-  onNameChange(event) {
-    this.articles = event.target.value;
-  }
-
-  @action
   onCountChange(event) {
     this.count = event.target.value;
-  }
-
-  @action
-  onTargetChange(event) {
-    this.target = event.target.value;
   }
 
   @action

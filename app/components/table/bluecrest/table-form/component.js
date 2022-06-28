@@ -13,11 +13,6 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
   }
 
   @action
-  onNameChange(event) {
-    this.articles = event.target.value;
-  }
-
-  @action
   onCountChange(event) {
     this.count = event.target.value;
   }
