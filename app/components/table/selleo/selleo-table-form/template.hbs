@@ -19,14 +19,17 @@
         value={{this.count}}
         {{on 'input' this.onCountChange}}
       /></td>
-    <td><input
-        class='form-control'
-        type='text'
-        placeholder='Miejsce'
-        aria-label='default input example'
-        value={{this.target}}
-        {{on 'input' this.onTargetChange}}
-      /></td>
+    <td><PowerSelectMultiple
+        @searchEnabled={{true}}
+        @options={{this.target}}
+        @placeholder='Wybierz miejsce'
+        @selected={{this.chosen}}
+        @searchField='name'
+        @onChange={{set this 'chosen'}}
+        as |target|
+      >
+        {{target}}
+      </PowerSelectMultiple></td>
     <td><button
         class='btn btn-primary'
         type='submit'
