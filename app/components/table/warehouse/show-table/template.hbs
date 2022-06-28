@@ -1,0 +1,29 @@
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th scope='col'>Artykuły</th>
+      <th scope='col'>Ilość</th>
+      <th scope='col'>Wydano</th>
+      <th scope='col'>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @warehouse as |table|}}
+      <tr>
+        <td>{{table.articles}}</td>
+        <td>{{table.count}}</td>
+        <td>{{table.target}}</td>
+        <td>{{table.date}}</td>
+        <td><div class='input-group-sm'>
+            <button class='btn btn-primary' type='button'>Edytuj</button>
+            {{! template-lint-disable no-action }}
+            <button
+              class='btn btn-primary'
+              type='button'
+              {{action 'onDeleted' table}}
+            >Usuń</button>
+          </div></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
