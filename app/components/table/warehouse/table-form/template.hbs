@@ -19,17 +19,6 @@
         value={{this.count}}
         {{on 'input' this.onCountChange}}
       /></td>
-    <td><PowerSelect
-        @searchEnabled={{true}}
-        @options={{this.target}}
-        @placeholder='Wybierz miejsce'
-        @selected={{this.chosen}}
-        @searchField='name'
-        @onChange={{set this 'chosen'}}
-        as |target|
-      >
-        {{target}}
-      </PowerSelect></td>
     <td><button
         class='btn btn-primary'
         type='submit'
@@ -41,6 +30,6 @@
         type='button'
         class='btn btn-primary'
         {{on 'click' this.clear}}
-      >Usuń</button></td>
+      >Wyczyść</button></td>
   </tr>
 </tbody>

@@ -1,7 +1,7 @@
 import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class WarehouseModel extends Model {
-  @attr('string') name;
+  @attr('string') articles;
   @attr('string') count;
   @attr('string') target;
 
