@@ -8,26 +8,29 @@
     </tr>
   </thead>
   <tbody>
-    {{#each @selleo as |table|}}
+    {{#each @selleo as |selleo|}}
       <tr>
-        <td>{{table.articles}}</td>
-        <td>{{table.count}}</td>
-        <td>{{table.target}}</td>
-        <td><div class='form-check form-check-inline'>
+        <td>{{selleo.articles}}</td>
+        <td>{{selleo.count}}</td>
+        <td>{{selleo.target}}</td>
+        <td><div class='form-check form-switch'>
             <input
               class='form-check-input'
               type='checkbox'
-              id='inlineCheckbox1'
-              value='option1'
+              role='switch'
+              id='flexSwitchCheckDefault'
             />
-            <label class='form-check-label' for='inlineCheckbox1'></label>
+            <label
+              class='form-check-label'
+              for='flexSwitchCheckDefault'
+            ></label>
           </div></td>
         <td><div class='input-group-sm'>
             {{! template-lint-disable no-action }}
             <button
               class='btn btn-primary'
               type='button'
-              {{action 'onDeleted' table}}
+              {{action 'onDeleted' selleo}}
             >Usuń</button>
           </div></td>
       </tr>
