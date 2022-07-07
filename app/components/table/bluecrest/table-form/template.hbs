@@ -11,14 +11,29 @@
       >
         {{article}}
       </PowerSelect></td>
-    <td><input
-        class='form-control'
-        type='text'
-        placeholder='Ilość'
-        aria-label='default input example'
-        value={{this.count}}
-        {{on 'input' this.onCountChange}}
-      /></td>
+    <td><PowerSelect
+        @searchEnabled={{true}}
+        @options={{this.count}}
+        @placeholder='Wybierz ilość'
+        @selected={{this.choose}}
+        @searchField='name'
+        @onChange={{set this 'choose'}}
+        as |count|
+      >
+        {{count}}
+      </PowerSelect></td>
+    <td><PowerSelect
+        @searchEnabled={{true}}
+        @options={{this.unit}}
+        @placeholder='Wybierz jednostkę'
+        @selected={{this.piece}}
+        @searchField='name'
+        @onChange={{set this 'piece'}}
+        as |unit|
+      >
+        {{unit}}
+      </PowerSelect></td>
+
     <td><button
         class='btn btn-primary'
         type='submit'

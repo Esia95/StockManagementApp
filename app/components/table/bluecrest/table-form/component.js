@@ -6,10 +6,12 @@ import { inject as service } from '@ember/service';
 export default class TableBluecrestBluecrestFormComponent extends Component {
   @service store;
   @tracked selected = '';
+  @tracked choose = '';
   @tracked count = '';
+  @tracked piece = '';
 
   get isEmptyField() {
-    return !(this.selected && this.count);
+    return !(this.selected && this.choose && this.piece);
   }
 
   @action
@@ -21,7 +23,8 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
   async onSave() {
     const order = {
       articles: this.selected,
-      count: this.count,
+      count: this.choose,
+      unit: this.piece,
     };
 
     const stockModel = this.store.createRecord('bluecrest', order);
@@ -31,7 +34,8 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
   @action
   clear() {
     this.selected = '';
-    this.count = '';
+    this.choose = '';
+    this.piece = '';
   }
 
   articles = [
@@ -50,4 +54,8 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
     'Worki 25l',
     'Zapach w płynie',
   ];
+
+  count = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+  unit = ['szt', 'op'];
 }
