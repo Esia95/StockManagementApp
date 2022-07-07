@@ -7,11 +7,13 @@ export default class TableTableFormComponent extends Component {
   @service store;
   @tracked selected = '';
   @tracked count = '';
+  @tracked number = '';
   @tracked target = '';
   @tracked chosen = '';
+  @tracked piece = '';
 
   get isEmptyField() {
-    return !(this.selected && this.count && this.chosen);
+    return !(this.selected && this.number && this.piece && this.chosen);
   }
 
   @action
@@ -23,8 +25,9 @@ export default class TableTableFormComponent extends Component {
   async onSave() {
     const order = {
       articles: this.selected,
-      count: this.count,
+      count: this.number,
       target: this.chosen,
+      unit: this.piece,
     };
 
     const stockModel = this.store.createRecord('table', order);
@@ -34,8 +37,9 @@ export default class TableTableFormComponent extends Component {
   @action
   clear() {
     this.selected = '';
-    this.count = '';
+    this.number = '';
     this.chosen = '';
+    this.piece = '';
   }
 
   articles = [
@@ -48,5 +52,9 @@ export default class TableTableFormComponent extends Component {
     'Szmatki żółte Vileda',
   ];
 
-  target = ['Bluecrest', 'HQ', 'Przybyły'];
+  count = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+  unit = ['szt', 'op'];
+
+  target = [' Bluecrest', ' HQ', ' Przybyły'];
 }
