@@ -8,9 +8,11 @@ export default class TableTableFormComponent extends Component {
   @tracked selected = '';
   @tracked count = '';
   @tracked chosen = '';
+  @tracked number = '';
+  @tracked piece = '';
 
   get isEmptyField() {
-    return !(this.selected && this.count && this.chosen);
+    return !(this.selected && this.piece && this.number && this.chosen);
   }
 
   @action
@@ -22,7 +24,8 @@ export default class TableTableFormComponent extends Component {
   async onSave() {
     const order = {
       articles: this.selected,
-      count: this.count,
+      count: this.number,
+      unit: this.piece,
       target: this.chosen,
     };
 
@@ -33,8 +36,9 @@ export default class TableTableFormComponent extends Component {
   @action
   clear() {
     this.selected = '';
-    this.count = '';
+    this.number = '';
     this.chosen = '';
+    this.piece = '';
   }
 
   articles = [
@@ -61,5 +65,9 @@ export default class TableTableFormComponent extends Component {
     'Zapach w płynie',
   ];
 
-  target = ['HQ', 'Przybyły'];
+  count = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+  unit = ['szt', 'op'];
+
+  target = [' HQ', ' Przybyły'];
 }
