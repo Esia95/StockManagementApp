@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 
 export default class TableWarehouseShowTable extends Component {
   @action
-  onDeleted(table) {
-    return table.destroyRecord();
+  onDeleted(warehouse) {
+    return warehouse.destroyRecord();
   }
 }

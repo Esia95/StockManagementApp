@@ -6,11 +6,12 @@ import { inject as service } from '@ember/service';
 export default class TableWarehouseTableFormComponent extends Component {
   @service store;
   @tracked selected = '';
-  @tracked count = '';
   @tracked chosen = '';
+  @tracked number = '';
+  @tracked piece = '';
 
   get isEmptyField() {
-    return !(this.selected && this.count);
+    return !(this.selected && this.number && this.piece);
   }
 
   @action
@@ -22,8 +23,9 @@ export default class TableWarehouseTableFormComponent extends Component {
   async onSave() {
     const order = {
       articles: this.selected,
-      count: this.count,
+      count: this.number,
       target: this.chosen,
+      unit: this.piece,
     };
 
     const stockModel = this.store.createRecord('warehouse', order);
@@ -33,8 +35,8 @@ export default class TableWarehouseTableFormComponent extends Component {
   @action
   clear() {
     this.selected = '';
-    this.count = '';
-    this.chosen = '';
+    this.number = '';
+    this.piece = '';
   }
 
   articles = [
@@ -68,6 +70,10 @@ export default class TableWarehouseTableFormComponent extends Component {
     'Zapach do prądu',
     'Zapach w płynie',
   ];
+
+  count = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+  unit = ['szt', 'op'];
 
   target = ['Bluecrest', 'HQ', 'Przybyły'];
 }

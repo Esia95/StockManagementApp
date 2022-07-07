@@ -3,23 +3,25 @@
     <tr>
       <th scope='col'>Artykuły</th>
       <th scope='col'>Ilość</th>
+      <th scope='col'>Jednostka</th>
       <th scope='col'>Wydano</th>
       <th scope='col'>Data</th>
     </tr>
   </thead>
   <tbody>
-    {{#each @warehouse as |table|}}
+    {{#each @warehouse as |warehouse|}}
       <tr>
-        <td>{{table.articles}}</td>
-        <td>{{table.count}}</td>
-        <td>{{table.target}}</td>
-        <td>{{table.date}}</td>
+        <td>{{warehouse.articles}}</td>
+        <td>{{warehouse.count}}</td>
+        <td>{{warehouse.unit}}</td>
+        <td>{{warehouse.target}}</td>
+        <td>{{warehouse.date}}</td>
         <td><div class='input-group-sm'>
             {{! template-lint-disable no-action }}
             <button
               class='btn btn-primary'
               type='button'
-              {{action 'onDeleted' table}}
+              {{action 'onDeleted' warehouse}}
             >Usuń</button>
           </div></td>
       </tr>
