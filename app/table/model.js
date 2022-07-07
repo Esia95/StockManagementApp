@@ -5,4 +5,5 @@ export default class TableModel extends Model {
   @attr('string') count;
   @attr('string') target;
   @attr('string') unit;
+  @attr('string') note;
 }
