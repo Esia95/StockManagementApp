@@ -3,7 +3,6 @@
     <tr>
       <th scope='col'>Artykuły</th>
       <th scope='col'>Ilość</th>
-      <th scope='col'>Jednostka</th>
       <th scope='col'>Wydano</th>
       <th scope='col'>Data</th>
     </tr>
@@ -12,8 +11,7 @@
     {{#each @warehouse as |warehouse|}}
       <tr>
         <td>{{warehouse.articles}}</td>
-        <td>{{warehouse.count}}</td>
-        <td>{{warehouse.unit}}</td>
+        <td>{{warehouse.count}}{{warehouse.unit}}</td>
         <td>{{warehouse.target}}</td>
         <td>{{warehouse.date}}</td>
         <td><div class='input-group-sm'>

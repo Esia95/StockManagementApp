@@ -3,15 +3,13 @@
     <tr>
       <th scope='col'>Artykuły</th>
       <th scope='col'>Ilość</th>
-      <th scope='col'>Jednostka</th>
     </tr>
   </thead>
   <tbody>
     {{#each @bluecrest as |bluecrest|}}
       <tr>
         <td>{{bluecrest.articles}}</td>
-        <td>{{bluecrest.count}}</td>
-        <td>{{bluecrest.unit}}</td>
+        <td>{{bluecrest.count}}{{bluecrest.unit}}</td>
         {{! <td><input id='datepicker' type='date' /></td> }}
         <td><div class='input-group-sm'>
             {{! template-lint-disable no-action }}
