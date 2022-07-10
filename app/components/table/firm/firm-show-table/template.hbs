@@ -4,6 +4,7 @@
       <th scope='col'>Artykuły</th>
       <th scope='col'>Ilość</th>
       <th scope='col'>Miejsce</th>
+      <th scope='col'>Note</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,7 @@
         <td>{{table.articles}}</td>
         <td>{{table.count}}{{table.unit}}</td>
         <td>{{table.target}}</td>
+        <td>{{table.note}}</td>
         <td><div class='input-group-sm'>
             {{! template-lint-disable no-action }}
             <button
@@ -19,23 +21,8 @@
               type='button'
               {{action 'onDeleted' table}}
             >Usuń</button>
-            <button
-              class='btn btn-primary'
-              type='button'
-              {{on 'click' this.onShowModal}}
-            >Note</button>
           </div></td>
       </tr>
     {{/each}}
   </tbody>
 </table>
-
-{{#if this.isShowModal}}
-  <Table::Firm::FirmShowTable::Modal
-    @onClose={{this.onHideModal}}
-    @onNoteChange={{this.onNoteChange}}
-    @hasEmptyFields={{this.hasEmptyFields}}
-    @onSave={{this.onSave}}
-    @note={{this.note}}
-  />
-{{/if}}
