@@ -5,6 +5,5 @@ export default class SelleoModel extends Model {
   @attr('string') count;
   @attr('string') unit;
   @attr('string') target;
-
-  // @belongsTo('user') owner;
+  @attr('string') note;
 }

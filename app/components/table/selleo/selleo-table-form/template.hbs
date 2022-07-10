@@ -45,6 +45,14 @@
       >
         {{target}}
       </PowerSelectMultiple></td>
+    <td><input
+        class='form-control'
+        type='text'
+        placeholder='Note'
+        aria-label='default input example'
+        value={{this.note}}
+        {{on 'input' this.onNoteChange}}
+      /></td>
     <td><button
         class='btn btn-primary'
         type='submit'
