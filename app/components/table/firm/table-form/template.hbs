@@ -1,0 +1,68 @@
+<tbody>
+  <tr>
+    <td><PowerSelect
+        @searchEnabled={{true}}
+        @options={{this.articles}}
+        @placeholder='Wybierz art.'
+        @selected={{this.selected}}
+        @searchField='name'
+        @onChange={{set this 'selected'}}
+        as |article|
+      >
+        {{article}}
+      </PowerSelect></td>
+    <td><PowerSelect
+        @searchEnabled={{true}}
+        @options={{this.count}}
+        @placeholder='Wybierz ilość'
+        @selected={{this.number}}
+        @searchField='name'
+        @onChange={{set this 'number'}}
+        as |count|
+      >
+        {{count}}
+      </PowerSelect></td>
+    <td><PowerSelect
+        @searchEnabled={{true}}
+        @options={{this.unit}}
+        @placeholder='Wybierz jednostkę'
+        @selected={{this.piece}}
+        @searchField='name'
+        @onChange={{set this 'piece'}}
+        as |unit|
+      >
+        {{unit}}
+      </PowerSelect></td>
+    <td><PowerSelectMultiple
+        @searchEnabled={{true}}
+        @options={{this.target}}
+        @placeholder='Wybierz miejsce'
+        @selected={{this.chosen}}
+        @searchField='name'
+        @onChange={{set this 'chosen'}}
+        as |target|
+      >
+        {{target}}
+      </PowerSelectMultiple></td>
+    <td><input
+        class='form-control'
+        type='text'
+        placeholder='Note'
+        aria-label='default input example'
+        value={{this.note}}
+        {{on 'input' this.onNoteChange}}
+      /></td>
+    <td><button
+        class='btn btn-primary'
+        type='submit'
+        id='form-control'
+        disabled={{this.isEmptyField}}
+        {{on 'click' this.onSave}}
+      >Dodaj</button></td>
+    <td><button
+        type='button'
+        class='btn btn-primary'
+        {{on 'click' this.clear}}
+      >Wyczyść</button></td>
+  </tr>
+</tbody>
