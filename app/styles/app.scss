@@ -1,6 +1,8 @@
 @import 'bootstrap';
 @import "ember-power-select";
 
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 body {
   background-color: rgb(235, 230, 230);
 }
@@ -42,3 +44,5 @@ background-image: linear-gradient(243deg, rgba(21, 67, 109, 1) 17%, rgba(25, 118
 
 
 @import "ember-power-select";
+
+@import 'ember-basic-dropdown';
