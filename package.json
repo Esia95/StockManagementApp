@@ -77,6 +77,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "auth0-lock": "^11.33.2",
     "bootstrap-icons": "^1.8.3"
   }
 }

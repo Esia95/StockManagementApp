@@ -23,6 +23,10 @@ module.exports = function (environment) {
     },
   };
 
+  ENV['ember-cli-mirage'] = {
+    enabled: false,
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -33,6 +37,9 @@ module.exports = function (environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
+    ENV['ember-cli-mirage'] = {
+      enabled: true,
+    };
     ENV.locationType = 'none';
 
     // keep test console output quieter
