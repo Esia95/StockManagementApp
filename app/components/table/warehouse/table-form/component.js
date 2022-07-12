@@ -12,14 +12,26 @@ export default class TableWarehouseTableFormComponent extends Component {
   @tracked piece = '';
   @tracked price = '';
   @tracked dateNew = '';
+  @tracked invoice = '';
 
   get isEmptyField() {
-    return !(this.selected && this.number && this.piece && this.price);
+    return !(
+      this.selected &&
+      this.number &&
+      this.piece &&
+      this.price &&
+      this.invoice
+    );
   }
 
   @action
   onPriceChange(event) {
     this.price = event.target.value;
+  }
+
+  @action
+  onInvoiceChange(event) {
+    this.invoice = event.target.value;
   }
 
   @action
@@ -36,6 +48,7 @@ export default class TableWarehouseTableFormComponent extends Component {
       unit: this.piece,
       price: this.price,
       date: this.dateNew,
+      invoice: this.invoice,
     };
 
     const stockModel = this.store.createRecord('warehouse', order);
@@ -49,6 +62,7 @@ export default class TableWarehouseTableFormComponent extends Component {
     this.piece = '';
     this.price = '';
     this.dateNew = '';
+    this.invoice = '';
   }
 
   articles = [

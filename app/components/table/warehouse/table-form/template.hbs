@@ -43,6 +43,7 @@
       /></td>
     <td><label>
         <PikadayInput
+          placeholder='Wybierz datę'
           @maxDate={{this.maxDate}}
           @format='DD-MM-YYYY'
           @value={{this.dateNew}}
@@ -50,6 +51,14 @@
         />
       </label>
     </td>
+    <td><input
+        class='form-control'
+        type='text'
+        placeholder='Nr. faktury'
+        aria-label='default input example'
+        value={{this.invoice}}
+        {{on 'input' this.onInvoiceChange}}
+      /></td>
     <td><button
         class='btn btn-primary'
         type='submit'

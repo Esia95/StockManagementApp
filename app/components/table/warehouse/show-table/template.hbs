@@ -5,15 +5,17 @@
       <th scope='col'>Ilość</th>
       <th scope='col'>Cena/szt</th>
       <th scope='col'>Data zamówienia</th>
+      <th scope='col'>Nr. faktury</th>
     </tr>
   </thead>
   <tbody>
     {{#each @warehouse as |warehouse|}}
       <tr>
         <td>{{warehouse.articles}}</td>
-        <td>{{warehouse.count}}{{warehouse.unit}}</td>
+        <td>{{warehouse.count}} {{warehouse.unit}}</td>
         <td>{{warehouse.price}} zł</td>
         <td>{{warehouse.date}}</td>
+        <td>{{warehouse.invoice}}</td>
         <td><div class='input-group-sm'>
             {{! template-lint-disable no-action }}
             <button

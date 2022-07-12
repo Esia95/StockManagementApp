@@ -7,5 +7,6 @@ export default class WarehouseModel extends Model {
   @attr('string') target;
   @attr('string') unit;
   @attr('string') price;
+  @attr('string') invoice;
   @attr('string') date;
 }
