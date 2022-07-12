@@ -9,7 +9,7 @@ export default class HomeRoute extends Route {
     const { isUserLoggedIn } = this.session;
 
     if (!isUserLoggedIn) {
-      this.router.tarnsitionTo('/');
+      this.router.tarnsitionTo('/login');
       return;
     }
 

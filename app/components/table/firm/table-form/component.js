@@ -57,5 +57,5 @@ export default class TableFormComponent extends Component {
 
   unit = [' szt', ' op'];
 
-  target = [' Bluecrest', ' HQ', ' Przybyły'];
+  target = [' Bluecrest', ' HQ', ' Przybyły', ' Karbowa'];
 }

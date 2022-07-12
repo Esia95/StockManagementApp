@@ -72,5 +72,5 @@ export default class TableTableFormComponent extends Component {
 
   unit = ['szt', 'op'];
 
-  target = [' HQ', ' Przybyły'];
+  target = [' HQ', ' Przybyły', ' Karbowa'];
 }
