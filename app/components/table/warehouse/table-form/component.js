@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
+import moment from 'moment';
 
 export default class TableWarehouseTableFormComponent extends Component {
   @service store;
@@ -9,14 +10,21 @@ export default class TableWarehouseTableFormComponent extends Component {
   @tracked chosen = '';
   @tracked number = '';
   @tracked piece = '';
+  @tracked price = '';
+  @tracked dateNew = '';
 
   get isEmptyField() {
-    return !(this.selected && this.number && this.piece);
+    return !(this.selected && this.number && this.piece && this.price);
   }
 
   @action
-  onCountChange(event) {
-    this.count = event.target.value;
+  onPriceChange(event) {
+    this.price = event.target.value;
+  }
+
+  @action
+  onStartDateChange(date) {
+    this.dateNew = moment(date).format('DD-MM-YYYY');
   }
 
   @action
@@ -26,6 +34,8 @@ export default class TableWarehouseTableFormComponent extends Component {
       count: this.number,
       target: this.chosen,
       unit: this.piece,
+      price: this.price,
+      date: this.dateNew,
     };
 
     const stockModel = this.store.createRecord('warehouse', order);
@@ -37,6 +47,8 @@ export default class TableWarehouseTableFormComponent extends Component {
     this.selected = '';
     this.number = '';
     this.piece = '';
+    this.price = '';
+    this.dateNew = '';
   }
 
   articles = [
@@ -71,9 +83,24 @@ export default class TableWarehouseTableFormComponent extends Component {
     'Zapach w płynie',
   ];
 
-  count = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  count = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11',
+    '12',
+    '13',
+    '14',
+  ];
 
   unit = ['szt', 'op'];
 
-  target = ['Bluecrest', 'HQ', 'Przybyły'];
+  target = ['Bluecrest', 'HQ', 'Przybyły', ' Karbowa'];
 }

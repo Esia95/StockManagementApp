@@ -33,6 +33,23 @@
       >
         {{unit}}
       </PowerSelect></td>
+    <td><input
+        class='form-control'
+        type='text'
+        placeholder='Cena produktu'
+        aria-label='default input example'
+        value={{this.price}}
+        {{on 'input' this.onPriceChange}}
+      /></td>
+    <td><label>
+        <PikadayInput
+          @maxDate={{this.maxDate}}
+          @format='DD-MM-YYYY'
+          @value={{this.dateNew}}
+          @onSelection={{this.onStartDateChange}}
+        />
+      </label>
+    </td>
     <td><button
         class='btn btn-primary'
         type='submit'
