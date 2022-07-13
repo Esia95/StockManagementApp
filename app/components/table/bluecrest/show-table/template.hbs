@@ -10,8 +10,12 @@
       <tr>
         <td>{{bluecrest.articles}}</td>
         <td>{{bluecrest.count}} {{bluecrest.unit}}</td>
-
-        {{! <td><input id='datepicker' type='date' /></td> }}
+        <td><div class='input-group-sm'>
+            <LinkTo @route='home.edit.bluecrest' @model={{bluecrest}}><button
+                class='btn btn-primary'
+                type='button'
+              >Edytuj</button></LinkTo>
+          </div></td>
         <td><div class='input-group-sm'>
             {{! template-lint-disable no-action }}
             <button
