@@ -2,7 +2,7 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
-export default class EditBluecrestController extends Controller {
+export default class EditFirmController extends Controller {
   @service store;
   @service router;
 
@@ -13,7 +13,7 @@ export default class EditBluecrestController extends Controller {
   @action
   discardChanges() {
     this.model.rollbackAttributes();
-    this.router.transitionTo('home.bluecrest');
+    this.router.transitionTo('home.firm');
   }
 
   @action
@@ -22,8 +22,13 @@ export default class EditBluecrestController extends Controller {
   }
 
   @action
+  onNoteChange(event) {
+    this.model.note = event.target.value;
+  }
+
+  @action
   async onSave() {
     this.model.save();
-    this.router.transitionTo('home.bluecrest');
+    this.router.transitionTo('home.firm');
   }
 }

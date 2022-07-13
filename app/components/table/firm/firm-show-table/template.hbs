@@ -15,6 +15,12 @@
         <td>{{table.target}}</td>
         <td>{{table.note}}</td>
         <td><div class='input-group-sm'>
+            <LinkTo @route='home.edit.firm' @model={{table}}><button
+                class='btn btn-primary'
+                type='button'
+              >Edytuj</button></LinkTo>
+          </div></td>
+        <td><div class='input-group-sm'>
             {{! template-lint-disable no-action }}
             <button
               class='btn btn-primary'

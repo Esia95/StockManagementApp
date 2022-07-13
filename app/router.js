@@ -16,7 +16,8 @@ Router.map(function () {
     this.route('edit', function () {
       this.route('bluecrest', { path: '/:id' });
       // this.route('selleo', { path: '/:id' });
-      // this.route('firm', { path: '/:id' });
+      // eslint-disable-next-line ember/no-shadow-route-definition
+      this.route('firm', { path: '/:id' });
       // this.route('warehouse', { path: '/:id' });
     });
   });
