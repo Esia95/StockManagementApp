@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-shadow-route-definition */
 import EmberRouter from '@ember/routing/router';
 import config from 'stock-management-app/config/environment';
 
@@ -13,12 +14,18 @@ Router.map(function () {
     this.route('firm');
     this.route('selleo');
     this.route('bluecrest');
-    this.route('edit', function () {
-      this.route('bluecrest', { path: '/:id' });
-      // this.route('selleo', { path: '/:id' });
-      // eslint-disable-next-line ember/no-shadow-route-definition
-      this.route('firm', { path: '/:id' });
-      // this.route('warehouse', { path: '/:id' });
+    this.route('bluecrests', function () {
+      this.route('modal', { path: '/:id' });
+    });
+    this.route('firms', function () {
+      this.route('modal', { path: '/:id' });
+    });
+
+    this.route('selleos', function () {
+      this.route('modal', { path: '/:id' });
+    });
+    this.route('warehouses', function () {
+      this.route('modal', { path: '/:id' });
     });
   });
   this.route('login');
