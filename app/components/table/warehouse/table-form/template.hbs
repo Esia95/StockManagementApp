@@ -5,9 +5,9 @@
         @searchEnabled={{true}}
         @options={{this.articles}}
         @placeholder='Wybierz art.'
-        @selected={{this.selectedArticle}}
+        @selected={{this.stockModel.article}}
         @searchField='name'
-        @onChange={{set this 'selectedArticle'}}
+        @onChange={{set this.stockModel 'article'}}
         as |article|
       >
         {{article}}
@@ -18,9 +18,9 @@
         @searchEnabled={{true}}
         @options={{this.count}}
         @placeholder='Wybierz ilość'
-        @selected={{this.selectedCount}}
+        @selected={{this.stockModel.count}}
         @searchField='name'
-        @onChange={{set this 'selectedCount'}}
+        @onChange={{set this.stockModel 'count'}}
         as |count|
       >
         {{count}}
@@ -31,9 +31,9 @@
         @searchEnabled={{true}}
         @options={{this.unit}}
         @placeholder='Wybierz jednostkę'
-        @selected={{this.selectedUnit}}
+        @selected={{this.stockModel.unit}}
         @searchField='name'
-        @onChange={{set this 'selectedUnit'}}
+        @onChange={{set this.stockModel 'unit'}}
         as |unit|
       >
         {{unit}}
@@ -45,8 +45,8 @@
         type='number'
         placeholder='Cena produktu'
         aria-label='default input example'
-        value={{this.price}}
-        {{on 'input' this.onPriceChange}}
+        value={{this.stockModel.price}}
+        {{on 'input' (fn this.onPropertyChange 'price')}}
       />
     </td>
     <td>
@@ -54,10 +54,9 @@
         <PikadayInput
           class='form-control form'
           placeholder='Wybierz datę'
-          @maxDate={{this.maxDate}}
           @format='DD-MM-YYYY'
-          @value={{this.dateNew}}
-          @onSelection={{this.onStartDateChange}}
+          @value={{this.stockModel.invoiceDate}}
+          @onSelection={{set this.stockModel 'invoiceDate'}}
         />
       </label>
     </td>
@@ -67,8 +66,8 @@
         type='text'
         placeholder='Nr. faktury'
         aria-label='default input example'
-        value={{this.invoice}}
-        {{on 'input' this.onInvoiceChange}}
+        value={{this.stockModel.invoice}}
+        {{on 'input' (fn this.onPropertyChange 'invoice')}}
       />
     </td>
     <td>
@@ -76,7 +75,7 @@
         class='btn btn-primary'
         type='submit'
         id='form-control'
-        disabled={{this.isEmptyField}}
+        disabled={{this.stockModel.isEmptyField}}
         {{on 'click' this.onSave}}
       >
         Dodaj

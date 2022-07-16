@@ -1,0 +1,52 @@
+const articles = [
+  'Domestos',
+  'Filtry do expressu',
+  'Gąbki do mycia naczyń',
+  'Mydło do rąk',
+  'Nablyszczacz do zmywarki',
+  'Krążki żelowe',
+  'Okamieniacz do expressu',
+  'Odświeżacz powietrza',
+  'Papier toaletowy',
+  'Płyn do czyszczenia spieniaczy',
+  'Płyn do czyszczenia zmywarek',
+  'Płyn do mycia naczyń',
+  'Płyn do czyszczenia toalet',
+  'Płyn uniwersalny',
+  'Płyn do podłóg',
+  'Płyn do szyb',
+  'Ręczniki papierowe',
+  'Rękawiczki',
+  'Sól do zmywarki',
+  'Szmatki do kuchni',
+  'Szmatki fioletowe Vileda',
+  'Szmatki żółte Vileda',
+  'Tabletki do zmywarki',
+  'Worki 120l',
+  'Worki 60l',
+  'Worki 25',
+  'Worki do odkurzacza',
+  'Zapach do prądu',
+  'Zapach w płynie',
+];
+
+const count = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+];
+
+const unit = ['szt', 'op'];
+
+export { articles, count, unit };

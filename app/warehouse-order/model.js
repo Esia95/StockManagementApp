@@ -10,4 +10,14 @@ export default class WarehouseOrderModel extends Model {
   @attr('number') count;
 
   @attr('date') invoiceDate;
+
+  get isEmptyField() {
+    return !(
+      this.article &&
+      this.count &&
+      this.unit &&
+      this.price &&
+      this.invoice
+    );
+  }
 }
