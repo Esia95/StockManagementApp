@@ -27,6 +27,11 @@ export default class EditSelleoController extends Controller {
   }
 
   @action
+  onTargetChange(event) {
+    this.model.target = event.target.value;
+  }
+
+  @action
   async onSave() {
     this.model.save();
     this.router.transitionTo('home.selleo');

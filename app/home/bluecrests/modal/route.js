@@ -5,6 +5,6 @@ export default class EditBluecrestRoute extends Route {
   @service store;
 
   async model() {
-    return this.store.findRecord('bluecrest');
+    return await this.store.findRecord('bluecrest');
   }
 }

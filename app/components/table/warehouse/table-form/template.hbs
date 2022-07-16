@@ -1,48 +1,58 @@
 <tbody>
   <tr>
-    <td><PowerSelect
+    <td>
+      <PowerSelect
         @searchEnabled={{true}}
         @options={{this.articles}}
         @placeholder='Wybierz art.'
-        @selected={{this.selected}}
+        @selected={{this.selectedArticle}}
         @searchField='name'
-        @onChange={{set this 'selected'}}
+        @onChange={{set this 'selectedArticle'}}
         as |article|
       >
         {{article}}
-      </PowerSelect></td>
-    <td><PowerSelect
+      </PowerSelect>
+    </td>
+    <td>
+      <PowerSelect
         @searchEnabled={{true}}
         @options={{this.count}}
         @placeholder='Wybierz ilość'
-        @selected={{this.number}}
+        @selected={{this.selectedCount}}
         @searchField='name'
-        @onChange={{set this 'number'}}
+        @onChange={{set this 'selectedCount'}}
         as |count|
       >
         {{count}}
-      </PowerSelect></td>
-    <td><PowerSelect
+      </PowerSelect>
+    </td>
+    <td>
+      <PowerSelect
         @searchEnabled={{true}}
         @options={{this.unit}}
         @placeholder='Wybierz jednostkę'
-        @selected={{this.piece}}
+        @selected={{this.selectedUnit}}
         @searchField='name'
-        @onChange={{set this 'piece'}}
+        @onChange={{set this 'selectedUnit'}}
         as |unit|
       >
         {{unit}}
-      </PowerSelect></td>
-    <td><input
+      </PowerSelect>
+    </td>
+    <td>
+      <input
         class='form-control'
         type='number'
         placeholder='Cena produktu'
         aria-label='default input example'
         value={{this.price}}
         {{on 'input' this.onPriceChange}}
-      /></td>
-    <td><label>
+      />
+    </td>
+    <td>
+      <label>
         <PikadayInput
+          class='form-control form'
           placeholder='Wybierz datę'
           @maxDate={{this.maxDate}}
           @format='DD-MM-YYYY'
@@ -51,25 +61,31 @@
         />
       </label>
     </td>
-    <td><input
+    <td>
+      <input
         class='form-control'
         type='text'
         placeholder='Nr. faktury'
         aria-label='default input example'
         value={{this.invoice}}
         {{on 'input' this.onInvoiceChange}}
-      /></td>
-    <td><button
+      />
+    </td>
+    <td>
+      <button
         class='btn btn-primary'
         type='submit'
         id='form-control'
         disabled={{this.isEmptyField}}
         {{on 'click' this.onSave}}
-      >Dodaj</button></td>
-    <td><button
-        type='button'
-        class='btn btn-primary'
-        {{on 'click' this.clear}}
-      >Wyczyść</button></td>
+      >
+        Dodaj
+      </button>
+    </td>
+    <td>
+      <button type='button' class='btn btn-primary' {{on 'click' this.clear}}>
+        Wyczyść
+      </button>
+    </td>
   </tr>
 </tbody>

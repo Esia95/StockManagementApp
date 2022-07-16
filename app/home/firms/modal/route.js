@@ -5,6 +5,6 @@ export default class EditFirmRoute extends Route {
   @service store;
 
   async model() {
-    return this.store.findRecord('table');
+    return await this.store.findRecord('table');
   }
 }

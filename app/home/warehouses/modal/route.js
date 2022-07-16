@@ -5,6 +5,6 @@ export default class WarehouseModalRoute extends Route {
   @service store;
 
   async model() {
-    return this.store.findRecord('warehouse');
+    return await this.store.findRecord('warehouse');
   }
 }

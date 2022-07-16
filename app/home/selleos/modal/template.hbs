@@ -38,7 +38,7 @@
               id='target'
               placeholder='Miejsce'
               value={{this.model.target}}
-              disabled
+              {{on 'input' this.onTargetChange}}
             />
           </div>
         </div></td>

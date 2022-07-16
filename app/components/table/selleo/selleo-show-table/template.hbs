@@ -15,21 +15,22 @@
         <td>{{selleo.target}}</td>
         <td>{{selleo.note}}</td>
 
-        <td><div class='input-group-sm'>
+        <div class='input-group-sm'>
+          <td>
             <LinkTo @route='home.selleos.modal' @model={{selleo}}><button
                 class='btn btn-primary'
                 type='button'
               >Edytuj</button></LinkTo>
-          </div></td>
+          </td>
 
-        <td><div class='input-group-sm'>
+          <td>
             {{! template-lint-disable no-action }}
             <button
               class='btn btn-primary'
               type='button'
               {{action 'onDeleted' selleo}}
             >Usuń</button>
-          </div></td>
+          </td></div>
       </tr>
     {{/each}}
   </tbody>

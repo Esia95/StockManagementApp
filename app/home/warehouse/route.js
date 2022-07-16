@@ -5,7 +5,6 @@ export default class WarehouseRoute extends Route {
   @service store;
 
   model() {
-    const tables = this.store.findAll('warehouse');
-    return tables;
+    return this.store.findAll('warehouse-order');
   }
 }

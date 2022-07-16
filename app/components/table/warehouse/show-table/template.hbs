@@ -9,27 +9,28 @@
     </tr>
   </thead>
   <tbody>
-    {{#each @warehouse as |warehouse|}}
+    {{#each @warehouseOrders as |order|}}
       <tr>
-        <td>{{warehouse.articles}}</td>
-        <td>{{warehouse.count}} {{warehouse.unit}}</td>
-        <td>{{warehouse.price}} zł</td>
-        <td>{{warehouse.date}}</td>
-        <td>{{warehouse.invoice}}</td>
-        <td><div class='input-group-sm'>
-            <LinkTo @route='home.warehouses.modal' @model={{warehouse}}><button
+        <td>{{order.article}}</td>
+        <td>{{order.count}} {{order.unit}}</td>
+        <td>{{order.price}} zł</td>
+        <td>{{moment-format order.invoiceDate 'DD-MM-YYYY'}}</td>
+        <td>{{order.invoice}}</td>
+
+        <div class='input-group-sm'>
+          <td>
+            <LinkTo @route='home.warehouses.modal' @model={{order}}><button
                 class='btn btn-primary'
                 type='button'
               >Edytuj</button></LinkTo>
-          </div></td>
-        <td><div class='input-group-sm'>
-            {{! template-lint-disable no-action }}
+          </td>
+          <td>
             <button
               class='btn btn-primary'
               type='button'
-              {{action 'onDeleted' warehouse}}
+              {{on 'click' (fn this.onDeleted order)}}
             >Usuń</button>
-          </div></td>
+          </td></div>
       </tr>
     {{/each}}
   </tbody>

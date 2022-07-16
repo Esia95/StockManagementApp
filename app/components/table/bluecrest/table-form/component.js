@@ -9,10 +9,16 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
   @tracked choose = '';
   @tracked count = '';
   @tracked piece = '';
+  @tracked name = 'Zamówione?';
 
   get isEmptyField() {
     return !(this.selected && this.choose && this.piece);
   }
+
+  // @action
+  // onChangeOrder() {
+  //   this.name = moment().format('DD/MM/YYYY');
+  // }
 
   @action
   onCountChange(event) {
@@ -25,6 +31,7 @@ export default class TableBluecrestBluecrestFormComponent extends Component {
       articles: this.selected,
       count: this.choose,
       unit: this.piece,
+      // ordered: this.name,
     };
 
     const stockModel = this.store.createRecord('bluecrest', order);

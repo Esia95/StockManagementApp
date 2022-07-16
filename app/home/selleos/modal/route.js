@@ -5,6 +5,6 @@ export default class EditSelleoRoute extends Route {
   @service store;
 
   async model() {
-    return this.store.findRecord('selleo');
+    return await this.store.findRecord('selleo');
   }
 }

@@ -2,23 +2,22 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
-import moment from 'moment';
 
 export default class TableWarehouseTableFormComponent extends Component {
   @service store;
-  @tracked selected = '';
-  @tracked chosen = '';
-  @tracked number = '';
-  @tracked piece = '';
+
+  @tracked selectedCount = '';
+  @tracked selectedArticle = '';
+  @tracked selectedUnit = '';
   @tracked price = '';
-  @tracked dateNew = '';
+  @tracked invoiceDate = '';
   @tracked invoice = '';
 
   get isEmptyField() {
     return !(
-      this.selected &&
-      this.number &&
-      this.piece &&
+      this.selectedArticle &&
+      this.selectedCount &&
+      this.selectedUnit &&
       this.price &&
       this.invoice
     );
@@ -36,32 +35,30 @@ export default class TableWarehouseTableFormComponent extends Component {
 
   @action
   onStartDateChange(date) {
-    this.dateNew = moment(date).format('DD-MM-YYYY');
+    this.invoiceDate = date;
   }
 
   @action
   async onSave() {
     const order = {
-      articles: this.selected,
-      count: this.number,
-      target: this.chosen,
-      unit: this.piece,
+      article: this.selectedArticle,
+      count: this.selectedCount,
+      unit: this.selectedUnit,
       price: this.price,
-      date: this.dateNew,
-      invoice: this.invoice,
+      invoiceDate: this.invoiceDate,
     };
 
-    const stockModel = this.store.createRecord('warehouse', order);
+    const stockModel = this.store.createRecord('warehouse-order', order);
     await stockModel.save();
     this.clear();
   }
   @action
   clear() {
-    this.selected = '';
-    this.number = '';
-    this.piece = '';
+    this.selectedArticle = '';
+    this.selectedCount = '';
+    this.selectedUnit = '';
     this.price = '';
-    this.dateNew = '';
+    this.invoiceDate = '';
     this.invoice = '';
   }
 

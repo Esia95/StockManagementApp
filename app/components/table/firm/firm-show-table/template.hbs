@@ -14,20 +14,22 @@
         <td>{{table.count}} {{table.unit}}</td>
         <td>{{table.target}}</td>
         <td>{{table.note}}</td>
-        <td><div class='input-group-sm'>
+
+        <div class='input-group-sm'>
+          <td>
             <LinkTo @route='home.firms.modal' @model={{table}}><button
                 class='btn btn-primary'
                 type='button'
               >Edytuj</button></LinkTo>
-          </div></td>
-        <td><div class='input-group-sm'>
+          </td>
+          <td>
             {{! template-lint-disable no-action }}
             <button
               class='btn btn-primary'
               type='button'
               {{action 'onDeleted' table}}
             >Usuń</button>
-          </div></td>
+          </td></div>
       </tr>
     {{/each}}
   </tbody>
