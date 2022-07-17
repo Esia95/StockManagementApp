@@ -5,12 +5,12 @@
         @searchEnabled={{true}}
         @options={{this.articles}}
         @placeholder='Wybierz art.'
-        @selected={{this.stockModel.article}}
+        @selected={{this.selectedArticle}}
         @searchField='name'
-        @onChange={{set this.stockModel 'article'}}
+        @onChange={{this.onChangeArticle}}
         as |article|
       >
-        {{article}}
+        {{article.name}}
       </PowerSelect>
     </td>
     <td>

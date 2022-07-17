@@ -6,16 +6,36 @@ import { articles, count, unit } from 'stock-management-app/utils/form-helpers';
 
 export default class TableWarehouseTableFormComponent extends Component {
   @service store;
-
   @tracked stockModel;
 
-  articles = articles;
   count = count;
   unit = unit;
 
   constructor() {
     super(...arguments);
     this.#createEmptyWarehouseOrderModel();
+  }
+
+  willDestroy() {
+    super.willDestroy(...arguments);
+    if (this.stockModel.isNew) {
+      this.stockModel.unloadRecord();
+    }
+  }
+
+  get articles() {
+    return articles.filter(({ target }) => target.includes('warehouse'));
+  }
+
+  get selectedArticle() {
+    return this.articles.find(
+      (article) => article.name === this.stockModel.article
+    );
+  }
+
+  @action
+  onChangeArticle(article) {
+    this.stockModel.article = article.name;
   }
 
   @action
