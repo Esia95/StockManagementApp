@@ -14,9 +14,6 @@ Router.map(function () {
     this.route('firm');
     this.route('selleo');
     this.route('bluecrest');
-    this.route('bluecrests', function () {
-      this.route('modal', { path: '/:id' });
-    });
     this.route('firms', function () {
       this.route('modal', { path: '/:id' });
     });
