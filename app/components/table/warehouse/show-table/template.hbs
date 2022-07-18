@@ -19,10 +19,11 @@
 
         <div class='input-group-sm'>
           <td>
-            <LinkTo @route='home.warehouses.modal' @model={{order}}><button
-                class='btn btn-primary'
-                type='button'
-              >Edytuj</button></LinkTo>
+            <button
+              class='btn btn-primary'
+              type='button'
+              {{on 'click' (fn this.onShowModal order)}}
+            >Edytuj</button>
           </td>
           <td>
             <button
@@ -35,3 +36,10 @@
     {{/each}}
   </tbody>
 </table>
+
+{{#if this.isShowModal}}
+  <Table::Warehouse::ShowTable::Modal
+    @order={{this.selectedOrderToEdit}}
+    @onClose={{this.onHideModal}}
+  />
+{{/if}}
