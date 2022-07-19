@@ -155,4 +155,6 @@ const count = [
 
 const unit = ['szt', 'op'];
 
-export { articles, count, unit };
+const targets = ['Przybyły', 'HQ', 'Karbowa', 'Bluecrest'];
+
+export { articles, count, unit, targets };

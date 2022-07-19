@@ -24,5 +24,26 @@ export default class ApplicationRoute extends Route {
 
     await user1Model.save();
     await user2Model.save();
+
+    const selleoModel = this.store.createRecord('company', {
+      id: 1,
+      name: 'SELLEO',
+      orders: [],
+    });
+    await selleoModel.save();
+
+    const bluecrestModel = this.store.createRecord('company', {
+      id: 2,
+      name: 'BLUECRESTS',
+      orders: [],
+    });
+    await bluecrestModel.save();
+
+    const firmModel = this.store.createRecord('company', {
+      id: 3,
+      name: 'NA FIRME',
+      orders: [],
+    });
+    await firmModel.save();
   }
 }

@@ -1,14 +1,7 @@
-<LinkTo @route='home.firm'><button
-    type='button'
-    class='btn btn-primary btn-lg'
-  >NA FIRMĘ</button></LinkTo>
-
-<LinkTo @route='home.selleo'><button
-    type='button'
-    class='btn btn-primary btn-lg'
-  >SELLEO</button></LinkTo>
-
-<LinkTo @route='home.bluecrest'><button
-    type='button'
-    class='btn btn-primary btn-lg'
-  >BLUECREST</button></LinkTo>
+{{#each @companies as |company|}}
+  <LinkTo @model={{company}} @route='home.order-list'>
+    <button type='button' class='btn btn-primary btn-lg'>
+      {{company.name}}
+    </button>
+  </LinkTo>
+{{/each}}
