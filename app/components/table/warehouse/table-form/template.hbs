@@ -1,90 +1,98 @@
-<tbody>
-  <tr>
-    <td>
-      <PowerSelect
-        @searchEnabled={{true}}
-        @options={{this.articles}}
-        @placeholder='Wybierz art.'
-        @selected={{this.selectedArticle}}
-        @searchField='name'
-        @onChange={{this.onChangeArticle}}
-        as |article|
-      >
-        {{article.name}}
-      </PowerSelect>
-    </td>
-    <td>
-      <PowerSelect
-        @searchEnabled={{true}}
-        @options={{this.count}}
-        @placeholder='Wybierz ilość'
-        @selected={{this.stockModel.count}}
-        @searchField='name'
-        @onChange={{set this.stockModel 'count'}}
-        as |count|
-      >
-        {{count}}
-      </PowerSelect>
-    </td>
-    <td>
-      <PowerSelect
-        @searchEnabled={{true}}
-        @options={{this.unit}}
-        @placeholder='Wybierz jednostkę'
-        @selected={{this.stockModel.unit}}
-        @searchField='name'
-        @onChange={{set this.stockModel 'unit'}}
-        as |unit|
-      >
-        {{unit}}
-      </PowerSelect>
-    </td>
-    <td>
-      <input
-        class='form-control'
-        type='number'
-        placeholder='Cena produktu'
-        aria-label='default input example'
-        value={{this.stockModel.price}}
-        {{on 'input' (fn this.onPropertyChange 'price')}}
-      />
-    </td>
-    <td>
-      <label>
-        <PikadayInput
-          class='form-control form'
-          placeholder='Wybierz datę'
-          @format='DD-MM-YYYY'
-          @value={{this.stockModel.invoiceDate}}
-          @onSelection={{set this.stockModel 'invoiceDate'}}
+<div>
+  <tbody>
+    <tr>
+      <td>
+        <PowerSelect
+          @searchEnabled={{true}}
+          @options={{this.articles}}
+          @placeholder='Wybierz art.'
+          @selected={{this.selectedArticle}}
+          @searchField='name'
+          @onChange={{this.onChangeArticle}}
+          as |article|
+        >
+          {{article.name}}
+        </PowerSelect>
+      </td>
+      <td>
+        <PowerSelect
+          @searchEnabled={{true}}
+          @options={{this.count}}
+          @placeholder='Wybierz ilość'
+          @selected={{this.stockModel.count}}
+          @searchField='name'
+          @onChange={{set this.stockModel 'count'}}
+          as |count|
+        >
+          {{count}}
+        </PowerSelect>
+      </td>
+      <td>
+        <PowerSelect
+          @searchEnabled={{true}}
+          @options={{this.unit}}
+          @placeholder='Wybierz jednostkę'
+          @selected={{this.stockModel.unit}}
+          @searchField='name'
+          @onChange={{set this.stockModel 'unit'}}
+          as |unit|
+        >
+          {{unit}}
+        </PowerSelect>
+      </td>
+    </tr>
+  </tbody>
+
+  <tbody>
+    <tr>
+      <td>
+        <input
+          class='form-control'
+          type='number'
+          placeholder='Cena produktu'
+          aria-label='default input example'
+          value={{this.stockModel.price}}
+          {{on 'input' (fn this.onPropertyChange 'price')}}
         />
-      </label>
-    </td>
-    <td>
-      <input
-        class='form-control'
-        type='text'
-        placeholder='Nr. faktury'
-        aria-label='default input example'
-        value={{this.stockModel.invoice}}
-        {{on 'input' (fn this.onPropertyChange 'invoice')}}
-      />
-    </td>
-    <td>
-      <button
-        class='btn btn-primary'
-        type='submit'
-        id='form-control'
-        disabled={{this.stockModel.isEmptyField}}
-        {{on 'click' this.onSave}}
-      >
-        Dodaj
-      </button>
-    </td>
-    <td>
-      <button type='button' class='btn btn-primary' {{on 'click' this.clear}}>
-        Wyczyść
-      </button>
-    </td>
-  </tr>
-</tbody>
+      </td>
+      <td>
+        <label>
+          <PikadayInput
+            class='form-control form'
+            placeholder='Wybierz datę'
+            @format='DD-MM-YYYY'
+            @value={{this.stockModel.invoiceDate}}
+            @onSelection={{set this.stockModel 'invoiceDate'}}
+          />
+        </label>
+      </td>
+      <td>
+        <input
+          class='form-control'
+          type='text'
+          placeholder='Nr. faktury'
+          aria-label='default input example'
+          value={{this.stockModel.invoice}}
+          {{on 'input' (fn this.onPropertyChange 'invoice')}}
+        />
+      </td>
+    </tr>
+  </tbody>
+</div>
+
+<div>
+  <button
+    class='btn btn-primary'
+    type='submit'
+    id='form-control'
+    disabled={{this.stockModel.isEmptyField}}
+    {{on 'click' this.onSave}}
+  >
+    Dodaj
+  </button>
+
+  <button type='button' class='btn btn-primary' {{on 'click' this.clear}}>
+    Wyczyść
+  </button>
+
+</div>

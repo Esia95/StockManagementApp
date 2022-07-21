@@ -1,4 +1,4 @@
-<Navbar />
+{{! <Navbar /> }}
 
 {{page-title 'Login'}}
 
@@ -35,14 +35,18 @@
     </div>
     <div class='mb-3 row'>
       <button type='submit' class='btn btn-primary'>Login</button>
+
+      <button
+        type='button'
+        class='btn'
+        {{on 'click' this.on0AuthLoginOrRegister}}
+      >Zaloguj się poprzez 0auth</button>
     </div>
   </form>
+
   <div>
     <span>Nie mam konta.</span><LinkTo @route='register'>Zarejestruj się</LinkTo>
   </div>
 </div>
-
-<button type='button' {{on 'click' this.on0AuthLoginOrRegister}}>Zaloguj się
-  poprzez 0auth</button>
 
 {{outlet}}
