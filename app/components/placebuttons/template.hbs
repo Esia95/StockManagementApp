@@ -1,6 +1,6 @@
 {{#each @companies as |company|}}
   <LinkTo @model={{company}} @route='home.order-list'>
-    <button type='button' class='btn btn-primary btn-lg'>
+    <button value={{company.name}} type='button' class='btn btn-lg'>
       {{company.name}}
     </button>
   </LinkTo>

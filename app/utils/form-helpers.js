@@ -155,6 +155,6 @@ const count = [
 
 const unit = ['szt', 'op'];
 
-const targets = ['Przybyły', 'HQ', 'Karbowa', 'Bluecrest'];
+const targets = [' Przybyły', ' HQ', ' Karbowa', ' Bluecrest'];
 
 export { articles, count, unit, targets };

@@ -1,0 +1,9 @@
+<BackToButton @route='home.orders' @label='Cofnij' />
+
+<Header>ZAMÓWIENIE {{this.model.name}}</Header>
+
+<TableCompany::ShowTable @company={{this.model}} />
+
+<TableCompany::TableForm @company={{this.model}} />
+
+{{outlet}}

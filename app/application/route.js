@@ -1,10 +1,17 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import moment from 'moment';
 
 export default class ApplicationRoute extends Route {
   @service store;
 
   async beforeModel() {
+    const isDatabaseFilled = localStorage.length;
+
+    if (isDatabaseFilled) {
+      return;
+    }
+
     const user1 = {
       id: 1,
       username: 'admin',
@@ -28,22 +35,52 @@ export default class ApplicationRoute extends Route {
     const selleoModel = this.store.createRecord('company', {
       id: 1,
       name: 'SELLEO',
-      orders: [],
     });
     await selleoModel.save();
 
     const bluecrestModel = this.store.createRecord('company', {
       id: 2,
-      name: 'BLUECRESTS',
-      orders: [],
+      name: 'BLUECREST',
     });
     await bluecrestModel.save();
 
     const firmModel = this.store.createRecord('company', {
       id: 3,
       name: 'NA FIRME',
-      orders: [],
     });
     await firmModel.save();
+
+    const order1 = this.store.createRecord('order', {
+      article: 'Płyn',
+      count: '4',
+      unit: 'op',
+      targets: 'HQ',
+      note: '',
+      createdDate: moment('05-06-2022').toDate(),
+      company: selleoModel,
+    });
+    await order1.save();
+
+    const order2 = this.store.createRecord('order', {
+      article: 'Papier',
+      count: '7',
+      unit: 'op',
+      targets: '',
+      note: 'sdaaad',
+      createdDate: moment('22-07-2022').toDate(),
+      company: bluecrestModel,
+    });
+    await order2.save();
+
+    const order3 = this.store.createRecord('order', {
+      article: 'Szmatki',
+      count: '2',
+      unit: 'szt',
+      targets: 'HQ, Przbyły',
+      note: 'ddfssd',
+      company: firmModel,
+      createdDate: moment('18-07-2022').toDate(),
+    });
+    await order3.save();
   }
 }

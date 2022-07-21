@@ -1,14 +1,18 @@
-import Model, { attr, hasMany } from '@ember-data/model';
+import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class OrderModel extends Model {
   @attr('string') article;
   @attr('string') unit;
   @attr('string') note;
-  @attr('string') target;
+  @attr('string') targets;
 
   @attr('number') count;
 
   @attr('date') createdDate;
 
-  @hasMany('company') companies;
+  @belongsTo('company', { autoSave: true }) company;
+
+  get isEmptyField() {
+    return !(this.article && this.count && this.unit);
+  }
 }

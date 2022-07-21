@@ -1,0 +1,46 @@
+{{! <div class='container-fluid'> }}
+<table class='table table-striped container-fluid'>
+  <thead>
+    <tr>
+      <th scope='col'>Artykuły</th>
+      <th scope='col'>Ilość</th>
+      <th scope='col'>Miejsce</th>
+      <th scope='col'>Note</th>
+      <th scope='col'>Data zamówienia</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @company.orders as |order|}}
+      <tr>
+        <td>{{order.article}}</td>
+        <td>{{order.count}} {{order.unit}}</td>
+        <td>{{order.targets}}</td>
+        <td>{{order.note}}</td>
+        <td>{{order.createdDate}}</td>
+
+        <td><div class='form-check'>
+            <input
+              id='flexCheckDefault'
+              class='form-check-input'
+              type='checkbox'
+              value=''
+              checked={{order.createdDate}}
+              {{on 'click' (fn this.onDateOrdered order)}}
+            />
+          </div></td>
+        <div class='input-group-sm'>
+          <td>
+            <button class='btn' type='button'>Edytuj</button>
+          </td>
+          <td>
+            <button
+              class='btn'
+              type='button'
+              {{on 'click' (fn this.onDeleted order)}}
+            >Usuń</button>
+          </td></div>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{! </div> }}
