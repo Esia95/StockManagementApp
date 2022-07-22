@@ -31,13 +31,30 @@ padding-right: 0%;
 }
 
 .text-center {
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 20px;
 }
 
 .container {
-  padding-top: 20px;
+  padding-top: 30px;
   text-align: -webkit-center;
+}
+
+.back-to-button {
+  position: absolute;
+  left: 7px;
+}
+
+.d-flex {
+  padding-top: 30px;
+}
+
+#oauth {
+  background-color: #eb5424
+}
+
+.register {
+text-decoration: none;
 }
 
 
