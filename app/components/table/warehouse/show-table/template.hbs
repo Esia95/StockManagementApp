@@ -23,14 +23,14 @@
               class='btn btn-primary'
               type='button'
               {{on 'click' (fn this.onShowModal order)}}
-            >Edytuj</button>
+            ><FaIcon @icon='pen-to-square' /></button>
           </td>
           <td>
             <button
               class='btn btn-primary'
               type='button'
               {{on 'click' (fn this.onDeleted order)}}
-            >Usuń</button>
+            ><FaIcon @icon='trash-can' /></button>
           </td></div>
       </tr>
     {{/each}}

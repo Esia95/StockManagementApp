@@ -88,11 +88,11 @@
     disabled={{this.stockModel.isEmptyField}}
     {{on 'click' this.onSave}}
   >
-    Dodaj
+    <FaIcon @icon='plus' />
   </button>
 
   <button type='button' class='btn btn-primary' {{on 'click' this.clear}}>
-    Wyczyść
+    <FaIcon @icon='xmark' />
   </button>
 
 </div>

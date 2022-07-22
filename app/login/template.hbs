@@ -2,12 +2,12 @@
 
 {{page-title 'Login'}}
 
-<Header>Login</Header>
+<Header>Logowanie</Header>
 <div class='container'>
   <form {{on 'submit' this.onSubmit}}>
 
     <div class='mb-3 row'>
-      <label for='username' class='col-sm-2 col-form-label'>Username</label>
+      <label for='username' class='col-sm-2 col-form-label'>Nick</label>
       <div class='col-sm-10'>
         <input
           type='text'
@@ -19,10 +19,7 @@
       </div>
     </div>
     <div class='mb-3 row'>
-      <label
-        for='inputPassword'
-        class='col-sm-2 col-form-label'
-      >Password</label>
+      <label for='inputPassword' class='col-sm-2 col-form-label'>Hasło</label>
       <div class='col-sm-10'>
         <input
           type='password'
@@ -34,18 +31,22 @@
       </div>
     </div>
     <div class='mb-3 row'>
-      <button type='submit' class='btn btn-primary'>Login</button>
+      <button type='submit' class='btn btn-primary'>Zaloguj się</button>
 
       <button
         type='button'
         class='btn'
+        id='oauth'
         {{on 'click' this.on0AuthLoginOrRegister}}
       >Zaloguj się poprzez 0auth</button>
     </div>
   </form>
 
   <div>
-    <span>Nie mam konta.</span><LinkTo @route='register'>Zarejestruj się</LinkTo>
+    <span>Nie masz konta? </span><LinkTo
+      class='register'
+      @route='register'
+    >Zarejestruj się</LinkTo>
   </div>
 </div>
 

@@ -65,12 +65,10 @@
         id='form-control'
         disabled={{this.ordersModel.isEmptyField}}
         {{on 'click' this.onSave}}
-      >Dodaj</button></td>
-    <td><button
-        type='button'
-        class='btn'
-        {{on 'click' this.clear}}
-      >Wyczyść</button></td>
+      ><FaIcon @icon='plus' /></button>
+      <button type='button' class='btn' {{on 'click' this.clear}}><FaIcon
+          @icon='xmark'
+        /></button></td>
   </tr>
 </tbody>
 {{! </div> }}

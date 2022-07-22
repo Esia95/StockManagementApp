@@ -16,7 +16,7 @@
         <td>{{order.count}} {{order.unit}}</td>
         <td>{{order.targets}}</td>
         <td>{{order.note}}</td>
-        <td>{{order.createdDate}}</td>
+        <td>{{moment-format order.createdDate 'DD-MM-YYYY'}}</td>
 
         <td><div class='form-check'>
             <input
@@ -30,17 +30,28 @@
           </div></td>
         <div class='input-group-sm'>
           <td>
-            <button class='btn' type='button'>Edytuj</button>
+            <button
+              class='btn btn-primary'
+              type='button'
+              {{on 'click' (fn this.onShowModal order)}}
+            ><FaIcon @icon='pen-to-square' /></button>
           </td>
           <td>
             <button
               class='btn'
               type='button'
               {{on 'click' (fn this.onDeleted order)}}
-            >Usuń</button>
+            ><FaIcon @icon='trash-can' /></button>
           </td></div>
       </tr>
     {{/each}}
   </tbody>
 </table>
 {{! </div> }}
+
+{{#if this.isShowModal}}
+  <TableCompany::ShowTable::Modal
+    @order={{this.selectedOrderToEdit}}
+    @onClose={{this.onHideModal}}
+  />
+{{/if}}

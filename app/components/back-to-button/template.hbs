@@ -1,6 +1,7 @@
 <LinkTo @route={{@route}}>
-  <button
-    class='b badge btn ember-power-select-clear-btn'
-    type={{this.type}}
-  >{{@label}}</button>
+  <div class='back-to-button'>
+    <button class='badge btn btn-primary' type={{this.type}}><FaIcon
+        @icon='arrow-left-long'
+      /></button>
+  </div>
 </LinkTo>
