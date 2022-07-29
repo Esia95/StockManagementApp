@@ -49,7 +49,7 @@
               id='price'
               placeholder='miejsce'
               value={{@order.targets}}
-              disabled
+              {{on 'input' (fn this.onPropertyChange 'targets')}}
             />
           </div>
         </td>
