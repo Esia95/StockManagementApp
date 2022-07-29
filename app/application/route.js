@@ -1,6 +1,5 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
-import moment from 'moment';
 
 export default class ApplicationRoute extends Route {
   @service store;
@@ -56,7 +55,7 @@ export default class ApplicationRoute extends Route {
       unit: 'op',
       targets: 'HQ',
       note: '',
-      createdDate: moment('05-06-2022').toDate(),
+      createdDate: new Date('21-05-2022'),
       company: selleoModel,
     });
     await order1.save();
@@ -67,7 +66,7 @@ export default class ApplicationRoute extends Route {
       unit: 'op',
       targets: '',
       note: 'sdaaad',
-      createdDate: moment('22-07-2022').toDate(),
+      createdDate: new Date('11-07-2022'),
       company: bluecrestModel,
     });
     await order2.save();
@@ -79,7 +78,7 @@ export default class ApplicationRoute extends Route {
       targets: 'HQ, Przbyły',
       note: 'ddfssd',
       company: firmModel,
-      createdDate: moment('18-07-2022').toDate(),
+      createdDate: new Date('06-06-2022'),
     });
     await order3.save();
   }

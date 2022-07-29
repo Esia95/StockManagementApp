@@ -16,7 +16,12 @@
         <td>{{order.count}} {{order.unit}}</td>
         <td>{{order.targets}}</td>
         <td>{{order.note}}</td>
-        <td>{{moment-format order.createdDate 'DD-MM-YYYY'}}</td>
+        {{#if order.isOrdered}}
+          <td>{{moment-format order.createdDate 'DD-MM-YYYY'}}</td>
+        {{else}}
+          <td></td>
+
+        {{/if}}
 
         <td><div class='form-check'>
             <input
