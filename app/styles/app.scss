@@ -67,6 +67,19 @@ padding-right: 0%;
   box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
 }
 
+.ember-modal-overlay {
+  width: 1000vw;
+  height: 1000vh;
+}
+
+.ember-modal-dialog {
+  min-width: fit-content;
+}
+
+.form-control {
+  margin-top: 5px;
+}
+
 
 @import "ember-power-select";
 

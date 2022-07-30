@@ -1,74 +1,69 @@
-{{! <div class='container-fluid'> }}
-<tbody class='container-fluid'>
-  <tr>
-    <td><PowerSelect
-        @searchEnabled={{true}}
-        @options={{this.articles}}
-        @placeholder='Wybierz art.'
-        @selected={{this.selectedArticle}}
-        @searchField='name'
-        @onChange={{this.onChangeArticle}}
-        as |article|
-      >
-        {{article.name}}
-      </PowerSelect></td>
-    <td><PowerSelect
-        @searchEnabled={{true}}
-        @options={{this.count}}
-        @placeholder='Wybierz ilość'
-        @selected={{this.ordersModel.count}}
-        @searchField='name'
-        @onChange={{set this.ordersModel 'count'}}
-        as |count|
-      >
-        {{count}}
-      </PowerSelect></td>
-    <td><PowerSelect
-        @searchEnabled={{true}}
-        @options={{this.unit}}
-        @placeholder='Wybierz jednostkę'
-        @selected={{this.ordersModel.unit}}
-        @searchField='name'
-        @onChange={{set this.ordersModel 'unit'}}
-        as |unit|
-      >
-        {{unit}}
-      </PowerSelect></td>
+<div class='table-form'>
 
-    <td><PowerSelectMultiple
-        @searchEnabled={{true}}
-        @options={{this.targets}}
-        @placeholder='Wybierz miejsce'
-        @selected={{this.ordersModel.targets}}
-        @searchField='name'
-        @onChange={{set this.ordersModel 'targets'}}
-        as |target|
-      >
-        {{target}}
-      </PowerSelectMultiple></td>
-  </tr>
-</tbody>
-<tbody>
-  <tr>
-    <td><input
-        class='form-control'
-        type='text'
-        placeholder='Note'
-        aria-label='default input example'
-        value={{this.ordersModel.note}}
-        {{on 'input' (fn this.onPropertyChange 'note')}}
-      /></td>
+  <PowerSelect
+    @searchEnabled={{true}}
+    @options={{this.articles}}
+    @placeholder='Wybierz art.'
+    @selected={{this.selectedArticle}}
+    @searchField='name'
+    @onChange={{this.onChangeArticle}}
+    as |article|
+  >
+    {{article.name}}
+  </PowerSelect>
+  <PowerSelect
+    @searchEnabled={{true}}
+    @options={{this.count}}
+    @placeholder='Wybierz ilość'
+    @selected={{this.ordersModel.count}}
+    @searchField='name'
+    @onChange={{set this.ordersModel 'count'}}
+    as |count|
+  >
+    {{count}}
+  </PowerSelect>
+  <PowerSelect
+    @searchEnabled={{true}}
+    @options={{this.unit}}
+    @placeholder='Wybierz jednostkę'
+    @selected={{this.ordersModel.unit}}
+    @searchField='name'
+    @onChange={{set this.ordersModel 'unit'}}
+    as |unit|
+  >
+    {{unit}}
+  </PowerSelect>
 
-    <td><button
-        class='btn'
-        type='submit'
-        id='form-control'
-        disabled={{this.ordersModel.isEmptyField}}
-        {{on 'click' this.onSave}}
-      ><FaIcon @icon='plus' /></button>
-      <button type='button' class='btn' {{on 'click' this.clear}}><FaIcon
-          @icon='xmark'
-        /></button></td>
-  </tr>
-</tbody>
-{{! </div> }}
+  <PowerSelectMultiple
+    @searchEnabled={{true}}
+    @options={{this.targets}}
+    @placeholder='Wybierz miejsce'
+    @selected={{this.ordersModel.targets}}
+    @searchField='name'
+    @onChange={{set this.ordersModel 'targets'}}
+    as |target|
+  >
+    {{target}}
+  </PowerSelectMultiple>
+
+  <input
+    class='form-control'
+    type='text'
+    placeholder='Note'
+    aria-label='default input example'
+    value={{this.ordersModel.note}}
+    {{on 'input' (fn this.onPropertyChange 'note')}}
+  />
+
+  <button
+    class='btn'
+    type='submit'
+    id='form-control'
+    disabled={{this.ordersModel.isEmptyField}}
+    {{on 'click' this.onSave}}
+  ><FaIcon @icon='plus' /></button>
+  <button type='button' class='btn' {{on 'click' this.clear}}><FaIcon
+      @icon='xmark'
+    /></button>
+
+</div>
