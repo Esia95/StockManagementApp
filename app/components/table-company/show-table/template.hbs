@@ -1,5 +1,4 @@
-{{! <div class='container-fluid'> }}
-<table class='table table-striped container-fluid'>
+<table class='table table-striped container-fluid' id='show-table'>
   <thead>
     <tr>
       <th scope='col'>Artykuły</th>
@@ -45,10 +44,10 @@
               />
             {{/if}}
           </div></td>
-        <div class='input-group-sm'>
+        <div class='input-group-sm' id='edit'>
           <td>
             <button
-              class='btn btn-primary'
+              class='btn'
               type='button'
               {{on 'click' (fn this.onShowModal order)}}
             ><FaIcon @icon='pen-to-square' /></button>

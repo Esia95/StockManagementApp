@@ -5,6 +5,7 @@
 @import "ember-modal-dialog/ember-modal-appearance";
 body {
   background-color: rgb(210, 236, 248);
+  min-width: fit-content;
 }
 
 .navbar {
@@ -28,6 +29,10 @@ padding-right: 0%;
 
 .btn-primary {
   color: rgb(255, 255, 255);
+}
+
+#edit {
+  display: table-cell;
 }
 
 .text-center {
@@ -54,7 +59,12 @@ padding-right: 0%;
 }
 
 .register {
-text-decoration: none;
+  text-decoration: none;
+}
+
+#show-table {
+  min-width: auto;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
 }
 
 
