@@ -18,9 +18,7 @@
   <tbody>
     {{#each @company.orders as |order|}}
       <tr>
-        {{#if (should-display-column @company 'articles')}}
-          <td>{{order.article}}</td>
-        {{/if}}
+        <td>{{order.article}}</td>
 
         <td>{{order.count}} {{order.unit}}</td>
         {{#if (should-display-column @company 'targets')}}
@@ -87,5 +85,6 @@
   <TableCompany::ShowTable::Modal
     @order={{this.selectedOrderToEdit}}
     @onClose={{this.onHideModal}}
+    @company={{@company}}
   />
 {{/if}}

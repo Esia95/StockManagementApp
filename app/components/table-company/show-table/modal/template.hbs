@@ -1,11 +1,16 @@
-<ModalDialog @translucentOverlay={{true}}>
+<ModalDialog @translucentOverlay={{true}} @onClickOverlay={{this.onClose}}>
   <div class='container'>
     <thead>
       <tr>
         <th scope='col'>Artykuły</th>
         <th scope='col'>Ilość</th>
-        <th scope='col'>Miejsce</th>
-        <th scope='col'>Note</th>
+        {{#if (should-display-column @company 'targets')}}
+          <th scope='col'>Miejsce</th>
+        {{/if}}
+
+        {{#if (should-display-column @company 'note')}}
+          <th scope='col'>Note</th>
+        {{/if}}
         <th scope='col'>Data zamówienia</th>
       </tr>
     </thead>
@@ -48,32 +53,36 @@
           <label for='username' class='col-sm-2 col-form-label'>
 
           </label>
-          <div class='col-sm-10'>
-            <input
-              type='text'
-              class='form-control'
-              id='price'
-              placeholder='miejsce'
-              value={{@order.targets}}
-              {{on 'input' (fn this.onPropertyChange 'targets')}}
-            />
-          </div>
+          {{#if (should-display-column @company 'targets')}}
+            <div class='col-sm-10'>
+              <input
+                type='text'
+                class='form-control'
+                id='price'
+                placeholder='miejsce'
+                value={{@order.targets}}
+                {{on 'input' (fn this.onPropertyChange 'targets')}}
+              />
+            </div>
+          {{/if}}
         </td>
 
         <td>
           <label for='username' class='col-sm-2 col-form-label'>
 
           </label>
-          <div class='col-sm-10'>
-            <input
-              type='text'
-              class='form-control'
-              id='note'
-              placeholder='note'
-              value={{@order.note}}
-              {{on 'input' (fn this.onPropertyChange 'note')}}
-            />
-          </div>
+          {{#if (should-display-column @company 'note')}}
+            <div class='col-sm-10'>
+              <input
+                type='text'
+                class='form-control'
+                id='note'
+                placeholder='note'
+                value={{@order.note}}
+                {{on 'input' (fn this.onPropertyChange 'note')}}
+              />
+            </div>
+          {{/if}}
         </td>
 
         <td>
