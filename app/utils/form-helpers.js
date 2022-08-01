@@ -1,9 +1,3 @@
-// allArticles = articles
-
-// get articles() {
-//   return allArticles.filter(({ target }) => target.includes('selleo'))
-// }
-
 const articles = [
   { name: 'Domestos', target: ['bluecrest', 'selleo', 'warehouse'] },
 

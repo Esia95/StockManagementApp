@@ -1,7 +1,8 @@
 <div class='table-form'>
   <tbody>
     <tr>
-      <td><PowerSelect
+      <td>
+        <PowerSelect
           @searchEnabled={{true}}
           @options={{this.articles}}
           @placeholder='Wybierz art.'
@@ -11,8 +12,11 @@
           as |article|
         >
           {{article.name}}
-        </PowerSelect></td>
-      <td><PowerSelect
+        </PowerSelect>
+      </td>
+
+      <td>
+        <PowerSelect
           @searchEnabled={{true}}
           @options={{this.count}}
           @placeholder='Wybierz ilość'
@@ -22,8 +26,11 @@
           as |count|
         >
           {{count}}
-        </PowerSelect></td>
-      <td><PowerSelect
+        </PowerSelect>
+      </td>
+
+      <td>
+        <PowerSelect
           @searchEnabled={{true}}
           @options={{this.unit}}
           @placeholder='Wybierz jednostkę'
@@ -33,33 +40,42 @@
           as |unit|
         >
           {{unit}}
-        </PowerSelect></td>
-
-      <td><PowerSelectMultiple
-          @searchEnabled={{true}}
-          @options={{this.targets}}
-          @placeholder='Wybierz miejsce'
-          @selected={{this.ordersModel.targets}}
-          @searchField='name'
-          @onChange={{set this.ordersModel 'targets'}}
-          as |target|
-        >
-          {{target}}
-        </PowerSelectMultiple></td>
+        </PowerSelect>
+      </td>
+      <td>
+        {{#if (should-display-column @company 'targets')}}
+          <PowerSelectMultiple
+            @searchEnabled={{true}}
+            @options={{this.targets}}
+            @placeholder='Wybierz miejsce'
+            @selected={{this.ordersModel.targets}}
+            @searchField='name'
+            @onChange={{set this.ordersModel 'targets'}}
+            as |target|
+          >
+            {{target}}
+          </PowerSelectMultiple>
+        {{/if}}
+      </td>
     </tr>
   </tbody>
   <tbody>
     <tr>
-      <td><input
-          class='form-control'
-          type='text'
-          placeholder='Note'
-          aria-label='default input example'
-          value={{this.ordersModel.note}}
-          {{on 'input' (fn this.onPropertyChange 'note')}}
-        /></td>
+      <td>
+        {{#if (should-display-column @company 'note')}}
+          <input
+            class='form-control'
+            type='text'
+            placeholder='Note'
+            aria-label='default input example'
+            value={{this.ordersModel.note}}
+            {{on 'input' (fn this.onPropertyChange 'note')}}
+          />
+        {{/if}}
+      </td>
 
-      <td><button
+      <td>
+        <button
           class='btn'
           type='submit'
           id='form-control'
@@ -68,7 +84,8 @@
         ><FaIcon @icon='plus' /></button>
         <button type='button' class='btn' {{on 'click' this.clear}}><FaIcon
             @icon='xmark'
-          /></button></td>
+          /></button>
+      </td>
     </tr>
   </tbody>
 </div>

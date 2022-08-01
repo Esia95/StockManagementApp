@@ -3,26 +3,41 @@
     <tr>
       <th scope='col'>Artykuły</th>
       <th scope='col'>Ilość</th>
-      <th scope='col'>Miejsce</th>
-      <th scope='col'>Note</th>
+
+      {{#if (should-display-column @company 'targets')}}
+        <th scope='col'>Miejsce</th>
+      {{/if}}
+
+      {{#if (should-display-column @company 'note')}}
+        <th scope='col'>Note</th>
+      {{/if}}
+
       <th scope='col'>Data zamówienia</th>
     </tr>
   </thead>
   <tbody>
     {{#each @company.orders as |order|}}
       <tr>
-        <td>{{order.article}}</td>
-        <td>{{order.count}} {{order.unit}}</td>
-        <td>{{order.targets}}</td>
-        <td>{{order.note}}</td>
-        {{#if order.isOrdered}}
-          <td>{{moment-format order.createdDate 'DD-MM-YYYY'}}</td>
-        {{else}}
-          <td></td>
-
+        {{#if (should-display-column @company 'articles')}}
+          <td>{{order.article}}</td>
         {{/if}}
 
-        <td><div class='form-check'>
+        <td>{{order.count}} {{order.unit}}</td>
+        {{#if (should-display-column @company 'targets')}}
+          <td>{{order.targets}}</td>
+        {{/if}}
+        {{#if (should-display-column @company 'note')}}
+          <td>{{order.note}}</td>
+        {{/if}}
+
+        <td>
+          {{#if order.isOrdered}}
+            {{moment-format order.createdDate 'DD-MM-YYYY'}}
+          {{/if}}
+        </td>
+
+        <td>
+          <div class='form-check'>
             {{#if order.isOrdered}}
               <input
                 id='flexCheckDefault'
@@ -43,7 +58,9 @@
                 {{on 'click' (fn this.onDateOrdered order)}}
               />
             {{/if}}
-          </div></td>
+          </div>
+        </td>
+
         <div class='input-group-sm' id='edit'>
           <td>
             <button
@@ -58,7 +75,8 @@
               type='button'
               {{on 'click' (fn this.onDeleted order)}}
             ><FaIcon @icon='trash-can' /></button>
-          </td></div>
+          </td>
+        </div>
       </tr>
     {{/each}}
   </tbody>
