@@ -12,6 +12,7 @@ Router.map(function () {
     this.route('order-list', { path: 'order-list/:id' });
     this.route('orders');
     this.route('warehouse');
+    this.route('archive');
   });
   this.route('login');
   this.route('register');
