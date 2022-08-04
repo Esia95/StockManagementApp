@@ -6,6 +6,7 @@ export default class OrderModel extends Model {
   @attr('string') targets;
 
   @attr('boolean', { defaultValue: false }) isOrdered;
+  @attr('boolean', { defaultValue: false }) isArchived;
 
   @attr('number') count;
 

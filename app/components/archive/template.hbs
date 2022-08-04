@@ -1,0 +1,28 @@
+<table class='table table-striped container-fluid' id='show-table'>
+  <thead>
+    <tr>
+      <th scope='col'>Artykuły</th>
+      <th scope='col'>Ilość</th>
+      <th scope='col'>Miejsce</th>
+      <th scope='col'>Note</th>
+      <th scope='col'>Data zamówienia</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each @orders as |order|}}
+      {{#if order.isArchived}}
+        <tr>
+          <td>{{order.article}}</td>
+          <td>{{order.count}} {{order.unit}}</td>
+          <td>{{order.targets}}</td>
+          <td>{{order.note}}</td>
+          <td>
+            {{#if order.isOrdered}}
+              {{moment-format order.createdDate 'DD-MM-YYYY'}}
+            {{/if}}
+          </td>
+        </tr>
+      {{/if}}
+    {{/each}}
+  </tbody>
+</table>

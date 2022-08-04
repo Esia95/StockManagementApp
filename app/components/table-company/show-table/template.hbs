@@ -74,6 +74,13 @@
               {{on 'click' (fn this.onDeleted order)}}
             ><FaIcon @icon='trash-can' /></button>
           </td>
+          <td>
+            <button
+              class='btn'
+              type='button'
+              {{on 'click' (fn this.onArchive order)}}
+            ><FaIcon @icon='box-archive' /></button>
+          </td>
         </div>
       </tr>
     {{/each}}

@@ -16,6 +16,12 @@ export default class TableCompanyShowTableComponent extends Component {
   }
 
   @action
+  async onArchive(order) {
+    order.isArchived = true;
+    await order.save();
+  }
+
+  @action
   async onDeleted(order) {
     await order.destroyRecord();
   }
