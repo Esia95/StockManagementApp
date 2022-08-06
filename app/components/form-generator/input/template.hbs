@@ -1,0 +1,12 @@
+<div class='mb-3 row'>
+  <label for={{this.id}} class='col-sm-2 col-form-label'>{{@label}}</label>
+  <div class='col-sm-10'>
+    <input
+      id={{this.id}}
+      class='form-control'
+      type={{this.type}}
+      placeholder={{@label}}
+      {{on 'input' this.onChange}}
+    />
+  </div>
+</div>

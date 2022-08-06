@@ -7,18 +7,8 @@ export default class RegisterController extends Controller {
   @service router;
 
   @action
-  onLoginChange(event) {
-    this.model.username = event.target.value;
-  }
-
-  @action
-  onEmailChange(event) {
-    this.model.email = event.target.value;
-  }
-
-  @action
-  onPasswordChange(event) {
-    this.model.password = event.target.value;
+  onPropertyChange(key, value) {
+    this.model[key] = value;
   }
 
   @action

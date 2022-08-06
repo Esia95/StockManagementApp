@@ -1,0 +1,11 @@
+<div class='container'>
+  <form {{on 'submit' @onSubmit}}>
+    {{yield
+      (hash
+        input=(component 'form-generator/input')
+        button=(component 'form-generator/button')
+        container=(component 'form-generator/container')
+      )
+    }}
+  </form>
+</div>
