@@ -16,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each @company.orders as |order|}}
+    {{#each this.isActiveOrders as |order|}}
       <tr>
         <td>{{order.article}}</td>
 
@@ -65,21 +65,27 @@
               class='btn'
               type='button'
               {{on 'click' (fn this.onShowModal order)}}
-            ><FaIcon @icon='pen-to-square' /></button>
-          </td>
-          <td>
-            <button
-              class='btn'
-              type='button'
-              {{on 'click' (fn this.onDeleted order)}}
-            ><FaIcon @icon='trash-can' /></button>
+            >
+              <FaIcon @icon='pen-to-square' />
+            </button>
           </td>
           <td>
             <button
               class='btn'
               type='button'
               {{on 'click' (fn this.onArchive order)}}
-            ><FaIcon @icon='box-archive' /></button>
+            >
+              <FaIcon @icon='box-archive' />
+            </button>
+          </td>
+          <td>
+            <button
+              class='btn'
+              type='button'
+              {{on 'click' (fn this.onDeleted order)}}
+            >
+              <FaIcon @icon='trash-can' />
+            </button>
           </td>
         </div>
       </tr>

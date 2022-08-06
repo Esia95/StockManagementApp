@@ -7,6 +7,11 @@ export default class TableCompanyShowTableComponent extends Component {
   @service store;
   @tracked isShowModal = false;
   @tracked selectedOrderToEdit;
+  @tracked isArchived = false;
+
+  get isActiveOrders() {
+    return this.args.company.orders.filter(({ isArchived }) => !isArchived);
+  }
 
   @action
   async onDateOrdered(order) {
