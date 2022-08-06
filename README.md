@@ -5,7 +5,7 @@ A short introduction of this app could easily go here.
 
 ## Netlify
 
-[Netlify](https://classy-alfajores-78312b.netlify.app)
+[Netlify](https://stockmanagementapp.netlify.app/login)
 
 ## Prerequisites
 
