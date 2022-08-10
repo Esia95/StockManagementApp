@@ -3,9 +3,10 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import Auth0Lock from 'auth0-lock';
+import ENV from 'stock-management-app/config/environment';
 
-const clientId = 'dbaWLQWh6VRSYmdAfyfTaRmozxYqc2H7';
-const domain = 'dev-mr1qezgd.eu.auth0.com';
+const clientId = ENV.AUTH0_CLIENTID;
+const domain = ENV.AUTH0_DOMAIN;
 
 export default class LoginController extends Controller {
   @service store;
