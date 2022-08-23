@@ -128,6 +128,26 @@ const articles = [
     name: 'Zapach w płynie',
     target: ['bluecrest', 'selleo', 'warehouse'],
   },
+  {
+    name: 'Płyn do kafelek',
+    target: ['bluecrest', 'selleo', 'warehouse'],
+  },
+  {
+    name: 'Płyn do szyb (UNGER)',
+    target: ['bluecrest', 'selleo', 'warehouse'],
+  },
+  {
+    name: 'Mleczko do czyszczenia (UNGER)',
+    target: ['bluecrest', 'selleo', 'warehouse'],
+  },
+  {
+    name: 'Ściągaczki (UNGER)',
+    target: ['bluecrest', 'selleo', 'warehouse'],
+  },
+  {
+    name: 'Papier do drukarki',
+    target: ['bluecrest', 'selleo', 'warehouse'],
+  },
 ];
 
 const count = [
