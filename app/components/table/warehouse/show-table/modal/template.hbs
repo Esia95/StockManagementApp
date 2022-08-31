@@ -2,81 +2,91 @@
   <div class='container'>
     <thead>
       <tr>
-        <th scope='col'>Artykuły</th>
-        <th scope='col'>Ilość</th>
-        <th scope='col'>Cena/szt</th>
-        <th scope='col'>Data zamówienia</th>
-        <th scope='col'>Nr. faktury</th>
+        <th scope='col'>Articles</th>
+        <th scope='col'>Amount</th>
+        <th scope='col'>Price/szt</th>
+        <th scope='col'>Date of order</th>
+        <th scope='col'>No. invoice</th>
       </tr>
     </thead>
 
     <tbody>
       <tr>
-        <td><div class='mb-3 row'>
+        <td>
+          <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
               <input
                 type='text'
                 class='form-control'
                 id='article'
-                placeholder='artykuł'
+                placeholder='Article'
                 value={{@order.article}}
                 disabled
               />
             </div>
-          </div></td>
-        <td><div class='mb-3 row'>
+          </div>
+        </td>
+        <td>
+          <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
               <input
                 type='number'
                 class='form-control'
                 id='count'
-                placeholder='ilość'
+                placeholder='Amount'
                 value={{@order.count}}
                 {{on 'input' (fn this.onPropertyChange 'count')}}
               />
             </div>
-          </div></td>
-        <td><div class='mb-3 row'>
+          </div>
+        </td>
+        <td>
+          <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
               <input
                 type='number'
                 class='form-control'
                 id='price'
-                placeholder='cena'
+                placeholder='Price'
                 value={{@order.price}}
                 {{on 'input' (fn this.onPropertyChange 'price')}}
               />
             </div>
-          </div></td>
-        <td><div class='mb-3 row'>
+          </div>
+        </td>
+        <td>
+          <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
               <input
                 type='text'
                 class='form-control'
                 id='date'
-                placeholder='Data'
+                placeholder='Date'
                 value={{moment-format @order.invoiceDate 'DD-MM-YYYY'}}
                 disabled
               />
             </div>
-          </div></td>
-        <td><div class='mb-3 row'>
+          </div>
+        </td>
+        <td>
+          <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
               <input
                 type='text'
                 class='form-control'
                 id='invoice'
-                placeholder='Nr. faktury'
+                placeholder='No. invoice'
                 value={{@order.invoice}}
                 {{on 'input' (fn this.onPropertyChange 'invoice')}}
               />
             </div>
-          </div></td>
+          </div>
+        </td>
       </tr>
     </tbody>
 
@@ -87,12 +97,16 @@
           class='btn btn-primary w-50 me-1'
           disabled={{this.shouldDisabledButton}}
           {{on 'click' this.onSave}}
-        >Save</button>
+        >
+          Save
+        </button>
         <button
           type='button'
           class='btn btn-danger w-50 ms-1'
           {{on 'click' this.onClose}}
-        >Cancel</button>
+        >
+          Cancel
+        </button>
       </div>
     </div>
   </div>
