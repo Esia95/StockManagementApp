@@ -2,16 +2,16 @@
   <div class='container'>
     <thead>
       <tr>
-        <th scope='col'>Artykuły</th>
-        <th scope='col'>Ilość</th>
+        <th scope='col'>Articles</th>
+        <th scope='col'>Amount</th>
         {{#if (should-display-column @company 'targets')}}
-          <th scope='col'>Miejsce</th>
+          <th scope='col'>Company</th>
         {{/if}}
 
         {{#if (should-display-column @company 'note')}}
           <th scope='col'>Note</th>
         {{/if}}
-        <th scope='col'>Data zamówienia</th>
+        <th scope='col'>Date of order</th>
       </tr>
     </thead>
 
@@ -26,7 +26,7 @@
               type='text'
               class='form-control'
               id='article'
-              placeholder='artykuł'
+              placeholder='Article'
               value={{@order.article}}
               disabled
             />
@@ -42,7 +42,7 @@
               type='number'
               class='form-control'
               id='count'
-              placeholder='ilość'
+              placeholder='Amount'
               value={{@order.count}}
               {{on 'input' (fn this.onPropertyChange 'count')}}
             />
@@ -59,7 +59,7 @@
                 type='text'
                 class='form-control'
                 id='price'
-                placeholder='miejsce'
+                placeholder='company'
                 value={{@order.targets}}
                 {{on 'input' (fn this.onPropertyChange 'targets')}}
               />
@@ -87,14 +87,14 @@
 
         <td>
           <label for='username' class='col-sm-2 col-form-label'>
-
           </label>
+
           <div class='col-sm-10'>
             <input
               type='text'
               class='form-control'
               id='date'
-              placeholder='data'
+              placeholder='date'
               value={{moment-format @order.createdDate 'DD-MM-YYYY'}}
               disabled
             />

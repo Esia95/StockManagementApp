@@ -5,7 +5,7 @@
         <PowerSelect
           @searchEnabled={{true}}
           @options={{this.articles}}
-          @placeholder='Wybierz art.'
+          @placeholder='Select article'
           @selected={{this.selectedArticle}}
           @searchField='name'
           @onChange={{this.onChangeArticle}}
@@ -19,7 +19,7 @@
         <PowerSelect
           @searchEnabled={{true}}
           @options={{this.count}}
-          @placeholder='Wybierz ilość'
+          @placeholder='Select amount'
           @selected={{this.ordersModel.count}}
           @searchField='name'
           @onChange={{set this.ordersModel 'count'}}
@@ -33,7 +33,7 @@
         <PowerSelect
           @searchEnabled={{true}}
           @options={{this.unit}}
-          @placeholder='Wybierz jednostkę'
+          @placeholder='Select unit'
           @selected={{this.ordersModel.unit}}
           @searchField='name'
           @onChange={{set this.ordersModel 'unit'}}
@@ -47,7 +47,7 @@
           <PowerSelectMultiple
             @searchEnabled={{true}}
             @options={{this.targets}}
-            @placeholder='Wybierz miejsce'
+            @placeholder='Select company'
             @selected={{this.ordersModel.targets}}
             @searchField='name'
             @onChange={{set this.ordersModel 'targets'}}
@@ -81,10 +81,12 @@
           id='form-control'
           disabled={{this.ordersModel.isEmptyField}}
           {{on 'click' this.onSave}}
-        ><FaIcon @icon='plus' /></button>
-        <button type='button' class='btn' {{on 'click' this.clear}}><FaIcon
-            @icon='xmark'
-          /></button>
+        >
+          <FaIcon @icon='plus' />
+        </button>
+        <button type='button' class='btn' {{on 'click' this.clear}}>
+          <FaIcon @icon='xmark' />
+        </button>
       </td>
     </tr>
   </tbody>
