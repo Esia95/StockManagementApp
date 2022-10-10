@@ -50,6 +50,18 @@ export default class ApplicationRoute extends Route {
     });
     await firmModel.save();
 
+    const poloModel = this.store.createRecord('company', {
+      id: 4,
+      name: 'POLO',
+    });
+    await poloModel.save();
+
+    const trekModel = this.store.createRecord('company', {
+      id: 5,
+      name: 'TREK',
+    });
+    await trekModel.save();
+
     const order1 = this.store.createRecord('order', {
       article: 'Płyn',
       count: '4',
@@ -82,5 +94,27 @@ export default class ApplicationRoute extends Route {
       createdDate: new Date('06-06-2022'),
     });
     await order3.save();
+
+    const order4 = this.store.createRecord('order', {
+      article: 'Szmatki',
+      count: '5',
+      unit: 'szt',
+      targets: 'HQ',
+      note: 'ddfssd',
+      company: poloModel,
+      createdDate: new Date('06-06-2022'),
+    });
+    await order4.save();
+
+    const order5 = this.store.createRecord('order', {
+      article: 'Szmatki',
+      count: '2',
+      unit: 'szt',
+      targets: 'Trek',
+      note: '',
+      company: trekModel,
+      createdDate: new Date('06-06-2022'),
+    });
+    await order5.save();
   }
 }
