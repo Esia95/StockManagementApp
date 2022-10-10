@@ -53,12 +53,14 @@ export default class ApplicationRoute extends Route {
     const poloModel = this.store.createRecord('company', {
       id: 4,
       name: 'POLO',
+      tableFields: ['articles', 'count', 'createdDate'],
     });
     await poloModel.save();
 
     const trekModel = this.store.createRecord('company', {
       id: 5,
       name: 'TREK',
+      tableFields: ['articles', 'count', 'createdDate'],
     });
     await trekModel.save();
 
@@ -99,8 +101,6 @@ export default class ApplicationRoute extends Route {
       article: 'Szmatki',
       count: '5',
       unit: 'szt',
-      targets: 'HQ',
-      note: 'ddfssd',
       company: poloModel,
       createdDate: new Date('06-06-2022'),
     });
@@ -110,8 +110,6 @@ export default class ApplicationRoute extends Route {
       article: 'Szmatki',
       count: '2',
       unit: 'szt',
-      targets: 'Trek',
-      note: '',
       company: trekModel,
       createdDate: new Date('06-06-2022'),
     });

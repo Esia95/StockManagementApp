@@ -1,132 +1,161 @@
 const articles = [
-  { name: 'Domestos', target: ['bluecrest', 'selleo', 'warehouse'] },
+  {
+    name: 'Domestos',
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
+  },
 
   {
     name: 'Filtry do expressu',
-    target: ['selleo', 'warehouse'],
+    target: ['selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Gąbki do mycia naczyń',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Mydło do rąk',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Nablyszczacz do zmywarki',
-    target: ['bluecrest', 'warehouse'],
+    target: ['bluecrest', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Krążki żelowe',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Okamieniacz do expressu',
-    target: ['selleo', 'warehouse'],
+    target: ['selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Odświeżacz powietrza',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Papier toaletowy',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Płyn do czyszczenia spieniaczy',
-    target: ['selleo', 'warehouse'],
+    target: ['selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Płyn do czyszczenia zmywarek',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Płyn do mycia naczyń',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Płyn do czyszczenia toalet',
-    target: ['firm', 'warehouse'],
+    target: ['firm', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Płyn uniwersalny',
-    target: ['firm', 'warehouse'],
+    target: ['firm', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Płyn do podłóg',
-    target: ['firm', 'warehouse'],
+    target: ['firm', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Płyn do szyb',
-    target: ['firm', 'warehouse'],
+    target: ['firm', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Ręczniki papierowe',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
-  { name: 'Rękawiczki', target: ['firm', 'warehouse'] },
+  { name: 'Rękawiczki', target: ['firm', 'warehouse', 'polo', 'trek'] },
 
   {
     name: 'Sól do zmywarki',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Szmatki do kuchni',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Szmatki fioletowe Vileda',
-    target: ['firm', 'warehouse'],
+    target: ['firm', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Szmatki żółte Vileda',
-    target: ['firm', 'warehouse'],
+    target: ['firm', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Tabletki do zmywarki',
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
+  },
+
+  {
+    name: 'Worki 120l',
     target: ['bluecrest', 'selleo', 'warehouse'],
   },
 
-  { name: 'Worki 120l', target: ['bluecrest', 'selleo', 'warehouse'] },
+  {
+    name: 'Worki 60l',
+    target: ['bluecrest', 'selleo', 'warehouse'],
+  },
 
-  { name: 'Worki 60l', target: ['bluecrest', 'selleo', 'warehouse'] },
-
-  { name: 'Worki 25', target: ['bluecrest', 'selleo', 'warehouse'] },
+  {
+    name: 'Worki 25',
+    target: ['bluecrest', 'selleo', 'warehouse'],
+  },
 
   {
     name: 'Worki do odkurzacza',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Zapach do prądu',
-    target: ['selleo', 'warehouse'],
+    target: ['selleo', 'warehouse', 'polo', 'trek'],
   },
 
   {
     name: 'Zapach w płynie',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
+  },
+
+  {
+    name: 'Swiffer wkłady',
+    target: ['selleo', 'warehouse', 'polo', 'trek'],
+  },
+  {
+    name: 'Swiffer wkłady do mopa suche',
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
+  },
+  {
+    name: 'Swiffer wkład do mopa mokre',
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
+  },
+  {
+    name: 'Kret',
+    target: ['bluecrest', 'selleo', 'warehouse', 'polo', 'trek'],
   },
 ];
 
@@ -149,6 +178,6 @@ const count = [
 
 const unit = ['szt', 'op'];
 
-const targets = [' Przybyły', ' HQ', ' Karbowa', ' Bluecrest'];
+const targets = [' Przybyły', ' HQ', ' Karbowa', ' Bluecrest', 'Polo', 'Trek'];
 
 export { articles, count, unit, targets };
