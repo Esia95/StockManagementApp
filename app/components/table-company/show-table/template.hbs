@@ -5,30 +5,30 @@
       <th scope='col'>Ilość</th>
 
       {{#if (should-display-column @company 'targets')}}
-        <th scope='col'>Miejsce</th>
+        <th scope='col' {{! data-test-comapny-targets }}>Miejsce</th>
       {{/if}}
 
       {{#if (should-display-column @company 'note')}}
-        <th scope='col'>Note</th>
+        <th scope='col' {{! data-test-company-note }}>Note</th>
       {{/if}}
 
       <th scope='col'>Data zamówienia</th>
     </tr>
   </thead>
   <tbody>
-    {{#each this.isActiveOrders as |order|}}
+    {{#each this.isActiveOrders as |order index|}}
       <tr>
-        <td>{{order.article}}</td>
+        <td data-test-order-article={{index}}>{{order.article}}</td>
 
-        <td>{{order.count}} {{order.unit}}</td>
+        <td data-test-order-count={{index}}>{{order.count}} {{order.unit}}</td>
         {{#if (should-display-column @company 'targets')}}
-          <td>{{order.targets}}</td>
+          <td data-test-order-place={{index}}>{{order.targets}}</td>
         {{/if}}
         {{#if (should-display-column @company 'note')}}
-          <td>{{order.note}}</td>
+          <td data-test-order-notes={{index}}>{{order.note}}</td>
         {{/if}}
 
-        <td>
+        <td data-test-order-date={{index}}>
           {{#if order.isOrdered}}
             {{moment-format order.createdDate 'DD-MM-YYYY'}}
           {{/if}}
