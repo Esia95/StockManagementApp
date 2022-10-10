@@ -46,7 +46,7 @@ export default class ApplicationRoute extends Route {
 
     const firmModel = this.store.createRecord('company', {
       id: 3,
-      name: 'NA FIRME',
+      name: 'COMPANY',
     });
     await firmModel.save();
 

@@ -5,7 +5,7 @@
         <PowerSelect
           @searchEnabled={{true}}
           @options={{this.articles}}
-          @placeholder='Wybierz art.'
+          @placeholder='Select article'
           @selected={{this.selectedArticle}}
           @searchField='name'
           @onChange={{this.onChangeArticle}}
@@ -19,7 +19,7 @@
         <PowerSelect
           @searchEnabled={{true}}
           @options={{this.count}}
-          @placeholder='Wybierz ilość'
+          @placeholder='Select amount'
           @selected={{this.stockModel.count}}
           @searchField='name'
           @onChange={{set this.stockModel 'count'}}
@@ -33,7 +33,7 @@
         <PowerSelect
           @searchEnabled={{true}}
           @options={{this.unit}}
-          @placeholder='Wybierz jednostkę'
+          @placeholder='Select unit'
           @selected={{this.stockModel.unit}}
           @searchField='name'
           @onChange={{set this.stockModel 'unit'}}
@@ -52,7 +52,7 @@
         <input
           class='form-control'
           type='number'
-          placeholder='Cena produktu'
+          placeholder='Product price'
           aria-label='default input example'
           value={{this.stockModel.price}}
           {{on 'input' (fn this.onPropertyChange 'price')}}
@@ -62,7 +62,7 @@
         <label>
           <PikadayInput
             class='form-control form'
-            placeholder='Wybierz datę'
+            placeholder='Select a date'
             @format='DD-MM-YYYY'
             @value={{this.stockModel.invoiceDate}}
             @onSelection={{set this.stockModel 'invoiceDate'}}
@@ -73,7 +73,7 @@
         <input
           class='form-control'
           type='text'
-          placeholder='Nr. faktury'
+          placeholder='No. invoices'
           aria-label='default input example'
           value={{this.stockModel.invoice}}
           {{on 'input' (fn this.onPropertyChange 'invoice')}}
