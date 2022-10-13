@@ -113,17 +113,17 @@ const articles = [
 
   {
     name: 'Worki 120l',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'softkraft'],
   },
 
   {
     name: 'Worki 60l',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'softkraft'],
   },
 
   {
     name: 'Worki 25',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'softkraft'],
   },
 
   {
@@ -167,15 +167,15 @@ const articles = [
   },
   {
     name: 'Mleczko do czyszczenia (UNGER)',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'softkraft'],
   },
   {
     name: 'Ściągaczki (UNGER)',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'softkraft'],
   },
   {
     name: 'Papier do drukarki',
-    target: ['bluecrest', 'selleo', 'warehouse'],
+    target: ['bluecrest', 'selleo', 'warehouse', 'softkraft'],
   },
 ];
 
@@ -198,6 +198,14 @@ const count = [
 
 const unit = ['szt', 'op'];
 
-const targets = [' Przybyły', ' HQ', ' Karbowa', ' Bluecrest', 'Polo', 'Trek'];
+const targets = [
+  ' Przybyły',
+  ' HQ',
+  ' Karbowa',
+  ' Bluecrest',
+  'Polo',
+  'Trek',
+  'Softkraft',
+];
 
 export { articles, count, unit, targets };

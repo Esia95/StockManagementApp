@@ -64,6 +64,13 @@ export default class ApplicationRoute extends Route {
     });
     await trekModel.save();
 
+    const softkraftModel = this.store.createRecord('company', {
+      id: 6,
+      name: 'SOFTKRAFT',
+      tableFields: ['articles', 'count', 'createdDate'],
+    });
+    await softkraftModel.save();
+
     const order1 = this.store.createRecord('order', {
       article: 'Płyn',
       count: '4',
@@ -114,5 +121,14 @@ export default class ApplicationRoute extends Route {
       createdDate: new Date('06-06-2022'),
     });
     await order5.save();
+
+    const order6 = this.store.createRecord('order', {
+      article: 'Szmatki',
+      count: '2',
+      unit: 'szt',
+      company: softkraftModel,
+      createdDate: new Date('06-07-2022'),
+    });
+    await order6.save();
   }
 }
