@@ -1,0 +1,10 @@
+<button
+  type={{this.type}}
+  class='btn {{this.size}} {{this.variant}}'
+  {{on 'click' this.onClick}}
+  ...attributes
+>
+  {{#if @faIcon}} <FaIcon @icon={{@faIcon}} />{{/if}}
+  {{#if @src}} <img src={{@src}} alt={{@alt}} />{{/if}}
+  {{@label}}
+</button>
