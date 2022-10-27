@@ -2,4 +2,14 @@
 <Header>ŁAD I HARMONIA</Header>
 {{outlet}}
 
-<Buttons />
+<LinkTo @route='home.orders'>
+  <Shared::Buttons class='btn-lg fs-2' @label='ORDERS' />
+</LinkTo>
+
+<LinkTo @route='home.warehouse'>
+  <Shared::Buttons class='btn-lg fs-2' @label='WEAREHOUSE' />
+</LinkTo>
+
+<LinkTo @route='home.archive'>
+  <Shared::Buttons class='btn-lg fs-2' @label='ARCHIVES' />
+</LinkTo>
