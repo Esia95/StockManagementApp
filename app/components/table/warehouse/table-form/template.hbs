@@ -14,7 +14,6 @@
           {{article.name}}
         </PowerSelect>
       </td>
-
       <td>
         <PowerSelect
           @searchEnabled={{true}}
@@ -28,7 +27,6 @@
           {{count}}
         </PowerSelect>
       </td>
-
       <td>
         <PowerSelect
           @searchEnabled={{true}}
@@ -42,20 +40,17 @@
           {{unit}}
         </PowerSelect>
       </td>
-
     </tr>
   </tbody>
 
   <tbody>
     <tr>
       <td>
-        <input
-          class='form-control'
-          type='number'
-          placeholder='Product price'
-          aria-label='default input example'
-          value={{this.stockModel.price}}
-          {{on 'input' (fn this.onPropertyChange 'price')}}
+        <Shared::Input
+          @type='number'
+          @placeholder='Product price'
+          @value={{this.stockModel.price}}
+          @onChange={{fn this.onPropertyChange 'price'}}
         />
       </td>
       <td>
@@ -70,13 +65,10 @@
         </label>
       </td>
       <td>
-        <input
-          class='form-control'
-          type='text'
-          placeholder='No. invoices'
-          aria-label='default input example'
-          value={{this.stockModel.invoice}}
-          {{on 'input' (fn this.onPropertyChange 'invoice')}}
+        <Shared::Input
+          @placeholder='No. invoices'
+          @value={{this.stockModel.invoice}}
+          @onChange={{fn this.onPropertyChange 'invoice'}}
         />
       </td>
     </tr>
@@ -84,18 +76,17 @@
 </div>
 
 <div>
-  <button
-    class='btn btn-primary'
-    type='submit'
-    id='form-control'
+  <Shared::Buttons
     disabled={{this.stockModel.isEmptyField}}
-    {{on 'click' this.onSave}}
-  >
-    <FaIcon @icon='plus' />
-  </button>
-
-  <button type='button' class='btn btn-primary' {{on 'click' this.clear}}>
-    <FaIcon @icon='xmark' />
-  </button>
-
+    @variant='primary'
+    @faIcon='plus'
+    @label='Add'
+    @onClick={{this.onSave}}
+  />
+  <Shared::Buttons
+    @variant='primary'
+    @faIcon='xmark'
+    @label='Delete'
+    @onClick={{this.clear}}
+  />
 </div>
