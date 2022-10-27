@@ -1,12 +1,11 @@
 <table class='table table-striped container-fluid' id='show-table'>
   <thead>
     <tr>
-      <th scope='col'>Firma</th>
-      <th scope='col'>Artykuły</th>
-      <th scope='col'>Ilość</th>
-      <th scope='col'>Miejsce wydania</th>
-      <th scope='col'>Note</th>
-      <th scope='col'>Data zamówienia</th>
+      <th scope='col'>Firm</th>
+      <th scope='col'>Articles</th>
+      <th scope='col'>Amount</th>
+      <th scope='col'>Place</th>
+      <th scope='col'>Date of order</th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +15,6 @@
         <td>{{order.article}}</td>
         <td>{{order.count}} {{order.unit}}</td>
         <td>{{order.targets}}</td>
-        <td>{{order.note}}</td>
         <td>
           {{#if order.isOrdered}}
             {{moment-format order.createdDate 'DD-MM-YYYY'}}
