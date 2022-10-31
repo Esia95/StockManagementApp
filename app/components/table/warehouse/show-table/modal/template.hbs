@@ -16,12 +16,10 @@
           <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
-              <input
-                type='text'
-                class='form-control'
-                id='article'
-                placeholder='Article'
-                value={{@order.article}}
+              <Shared::InputDisabled
+                @type='text'
+                @placeholder='Article'
+                @value={{@order.article}}
                 disabled
               />
             </div>
@@ -31,13 +29,11 @@
           <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
-              <input
-                type='number'
-                class='form-control'
-                id='count'
-                placeholder='Amount'
-                value={{@order.count}}
-                {{on 'input' (fn this.onPropertyChange 'count')}}
+              <Shared::Input
+                @type='number'
+                @placeholder='Amount'
+                @value={{@order.count}}
+                @onChange={{fn this.onPropertyChange 'count'}}
               />
             </div>
           </div>
@@ -46,13 +42,11 @@
           <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
-              <input
-                type='number'
-                class='form-control'
-                id='price'
-                placeholder='Price'
-                value={{@order.price}}
-                {{on 'input' (fn this.onPropertyChange 'price')}}
+              <Shared::Input
+                @type='number'
+                @placeholder='Price'
+                @value={{@order.price}}
+                @onChange={{fn this.onPropertyChange 'price'}}
               />
             </div>
           </div>
@@ -61,12 +55,10 @@
           <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
-              <input
-                type='text'
-                class='form-control'
-                id='date'
-                placeholder='Date'
-                value={{moment-format @order.invoiceDate 'DD-MM-YYYY'}}
+              <Shared::InputDisabled
+                @type='text'
+                @placeholder='Date'
+                @value={{moment-format @order.invoiceDate 'DD-MM-YYYY'}}
                 disabled
               />
             </div>
@@ -76,13 +68,11 @@
           <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
-              <input
-                type='text'
-                class='form-control'
-                id='invoice'
-                placeholder='No. invoice'
-                value={{@order.invoice}}
-                {{on 'input' (fn this.onPropertyChange 'invoice')}}
+              <Shared::Input
+                @type='text'
+                @placeholder='No. invoice'
+                @value={{@order.invoice}}
+                @onChange={{fn this.onPropertyChange 'invoice'}}
               />
             </div>
           </div>
@@ -92,21 +82,17 @@
 
     <div class='mb-3 row'>
       <div class='d-flex'>
-        <button
-          type='submit'
-          class='btn btn-primary w-50 me-1'
+        <Shared::Buttons
+          class='btn-primary w-50 me-1'
           disabled={{this.shouldDisabledButton}}
-          {{on 'click' this.onSave}}
-        >
-          Save
-        </button>
-        <button
-          type='button'
-          class='btn btn-danger w-50 ms-1'
-          {{on 'click' this.onClose}}
-        >
-          Cancel
-        </button>
+          @label='Save'
+          @onClick={{this.onSave}}
+        />
+        <Shared::Buttons
+          class='btn-primary w-50 me-1'
+          @label='Cancel'
+          @onClick={{this.onClose}}
+        />
       </div>
     </div>
   </div>

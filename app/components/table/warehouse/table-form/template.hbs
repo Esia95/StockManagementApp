@@ -2,43 +2,37 @@
   <tbody>
     <tr>
       <td>
-        <PowerSelect
-          @searchEnabled={{true}}
-          @options={{this.articles}}
+        <Shared::PowerSelect
           @placeholder='Select article'
+          @options={{this.articles}}
           @selected={{this.selectedArticle}}
-          @searchField='name'
           @onChange={{this.onChangeArticle}}
-          as |article|
+          as |value|
         >
-          {{article.name}}
-        </PowerSelect>
+          {{value.name}}
+        </Shared::PowerSelect>
       </td>
       <td>
-        <PowerSelect
-          @searchEnabled={{true}}
-          @options={{this.count}}
+        <Shared::PowerSelect
           @placeholder='Select amount'
+          @options={{this.count}}
           @selected={{this.stockModel.count}}
-          @searchField='name'
           @onChange={{set this.stockModel 'count'}}
-          as |count|
+          as |value|
         >
-          {{count}}
-        </PowerSelect>
+          {{value}}
+        </Shared::PowerSelect>
       </td>
       <td>
-        <PowerSelect
-          @searchEnabled={{true}}
-          @options={{this.unit}}
+        <Shared::PowerSelect
           @placeholder='Select unit'
+          @options={{this.unit}}
           @selected={{this.stockModel.unit}}
-          @searchField='name'
           @onChange={{set this.stockModel 'unit'}}
-          as |unit|
+          as |value|
         >
-          {{unit}}
-        </PowerSelect>
+          {{value}}
+        </Shared::PowerSelect>
       </td>
     </tr>
   </tbody>

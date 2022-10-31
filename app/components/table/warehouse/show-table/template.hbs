@@ -19,23 +19,18 @@
 
         <div class='input-group-sm'>
           <td>
-            <button
-              class='btn btn-primary'
-              type='button'
-              {{on 'click' (fn this.onShowModal order)}}
-            >
-              <FaIcon @icon='pen-to-square' />
-            </button>
+            <Shared::Buttons
+              class='btn-primary'
+              @faIcon='pen-to-square'
+              @onClick={{fn this.onShowModal order}}
+            />
           </td>
-
           <td>
-            <button
-              class='btn btn-primary'
-              type='button'
-              {{on 'click' (fn this.onDeleted order)}}
-            >
-              <FaIcon @icon='trash-can' />
-            </button>
+            <Shared::Buttons
+              class='btn-primary'
+              @faIcon='trash-can'
+              @onClick={{fn this.onDeleted order}}
+            />
           </td>
         </div>
       </tr>
