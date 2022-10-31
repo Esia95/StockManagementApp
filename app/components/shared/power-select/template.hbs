@@ -1,0 +1,12 @@
+<PowerSelect
+  @searchField='name'
+  @searchEnabled={{true}}
+  @options={{@options}}
+  @selected={{@selected}}
+  @placeholder={{@placeholder}}
+  @onChange={{@onChange}}
+  as |value|
+>
+  {{yield value}}
+
+</PowerSelect>
