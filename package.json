@@ -25,6 +25,7 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.6.0",
+    "@faker-js/faker": "^7.4.0",
     "@fortawesome/ember-fontawesome": "^0.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@glimmer/component": "^1.0.4",
@@ -40,6 +41,7 @@
     "ember-cli-dotenv": "^3.1.0",
     "ember-cli-htmlbars": "^6.0.1",
     "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-cli-mirage": "~2.1.0",
     "ember-cli-moment-shim": "^3.8.0",
     "ember-cli-sass": "^11.0.1",
     "ember-cli-sri": "^2.1.1",
@@ -61,6 +63,7 @@
     "ember-source": "~4.3.0",
     "ember-table": "^4.0.0",
     "ember-template-lint": "^4.3.0",
+    "ember-test-selectors": "^6.0.0",
     "ember-welcome-page": "^6.2.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
