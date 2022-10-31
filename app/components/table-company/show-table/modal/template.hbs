@@ -1,5 +1,6 @@
 <ModalDialog @translucentOverlay={{true}} @onClickOverlay={{this.onClose}}>
   <div class='container'>
+
     <thead>
       <tr>
         <th scope='col'>Articles</th>
@@ -19,108 +20,83 @@
       <tr>
         <td>
           <label for='username' class='col-sm-2 col-form-label'>
-
           </label>
           <div class='col-sm-10'>
-            <input
-              type='text'
-              class='form-control'
-              id='article'
-              placeholder='Article'
-              value={{@order.article}}
+            <Shared::InputDisabled
+              @type='text'
+              @placeholder='Article'
+              @value={{@order.article}}
               disabled
             />
           </div>
         </td>
-
         <td>
           <label for='username' class='col-sm-2 col-form-label'>
-
           </label>
           <div class='col-sm-10'>
-            <input
-              type='number'
-              class='form-control'
-              id='count'
-              placeholder='Amount'
-              value={{@order.count}}
-              {{on 'input' (fn this.onPropertyChange 'count')}}
+            <Shared::Input
+              @type='number'
+              @placeholder='Amount'
+              @value={{@order.count}}
+              @onChange={{fn this.onPropertyChange 'count'}}
             />
           </div>
         </td>
-
         <td>
           <label for='username' class='col-sm-2 col-form-label'>
-
           </label>
           {{#if (should-display-column @company 'targets')}}
             <div class='col-sm-10'>
-              <input
-                type='text'
-                class='form-control'
-                id='price'
-                placeholder='company'
-                value={{@order.targets}}
-                {{on 'input' (fn this.onPropertyChange 'targets')}}
+              <Shared::Input
+                @type='text'
+                @placeholder='Company'
+                @value={{@order.targets}}
+                @onChange={{fn this.onPropertyChange 'targets'}}
               />
             </div>
           {{/if}}
         </td>
-
         <td>
           <label for='username' class='col-sm-2 col-form-label'>
-
           </label>
           {{#if (should-display-column @company 'note')}}
             <div class='col-sm-10'>
-              <input
-                type='text'
-                class='form-control'
-                id='note'
-                placeholder='note'
-                value={{@order.note}}
-                {{on 'input' (fn this.onPropertyChange 'note')}}
+              <Shared::Input
+                @type='text'
+                @placeholder='Note'
+                @value={{@order.note}}
+                @onChange={{fn this.onPropertyChange 'note'}}
               />
             </div>
           {{/if}}
         </td>
-
         <td>
           <label for='username' class='col-sm-2 col-form-label'>
           </label>
-
           <div class='col-sm-10'>
-            <input
-              type='text'
-              class='form-control'
-              id='date'
-              placeholder='date'
-              value={{moment-format @order.createdDate 'DD-MM-YYYY'}}
+            <Shared::InputDisabled
+              @type='text'
+              @placeholder='Date'
+              @value={{moment-format @order.invoiceDate 'DD-MM-YYYY'}}
               disabled
             />
           </div>
         </td>
-
       </tr>
     </tbody>
 
     <div class='d-flex'>
-      <button
-        type='submit'
-        class='btn btn-primary w-50 me-1'
+      <Shared::Buttons
+        class='btn-primary w-50 me-1'
         disabled={{this.shouldDisabledButton}}
-        {{on 'click' this.onSave}}
-      >
-        <FaIcon @icon='check' />
-      </button>
-
-      <button
-        type='button'
-        class='btn btn-danger w-50 ms-1'
-        {{on 'click' this.onClose}}
-      >
-        <FaIcon @icon='xmark' />
-      </button>
+        @faIcon='check'
+        @onClick={{this.onSave}}
+      />
+      <Shared::Buttons
+        class='btn-primary w-50 me-1'
+        @faIcon='xmark'
+        @onClick={{this.onClose}}
+      />
     </div>
 
   </div>
