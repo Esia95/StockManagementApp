@@ -70,17 +70,11 @@
 </div>
 
 <div>
-  <Shared::Buttons
+  <Shared::Button
     disabled={{this.stockModel.isEmptyField}}
-    @variant='primary'
     @faIcon='plus'
     @label='Add'
     @onClick={{this.onSave}}
   />
-  <Shared::Buttons
-    @variant='primary'
-    @faIcon='xmark'
-    @label='Delete'
-    @onClick={{this.clear}}
-  />
+  <Shared::Button @faIcon='xmark' @label='Delete' @onClick={{this.clear}} />
 </div>

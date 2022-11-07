@@ -16,7 +16,7 @@
           <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
-              <Shared::InputDisabled
+              <Shared::Input
                 @type='text'
                 @placeholder='Article'
                 @value={{@order.article}}
@@ -55,7 +55,7 @@
           <div class='mb-3 row'>
             <label for='username' class='col-sm-2 col-form-label'></label>
             <div class='col-sm-10'>
-              <Shared::InputDisabled
+              <Shared::Input
                 @type='text'
                 @placeholder='Date'
                 @value={{moment-format @order.invoiceDate 'DD-MM-YYYY'}}
@@ -82,13 +82,13 @@
 
     <div class='mb-3 row'>
       <div class='d-flex'>
-        <Shared::Buttons
+        <Shared::Button
           class='btn-primary w-50 me-1'
           disabled={{this.shouldDisabledButton}}
           @label='Save'
           @onClick={{this.onSave}}
         />
-        <Shared::Buttons
+        <Shared::Button
           class='btn-primary w-50 me-1'
           @label='Cancel'
           @onClick={{this.onClose}}

@@ -61,12 +61,12 @@
       </td>
 
       <td>
-        <Shared::Buttons
+        <Shared::Button
           disabled={{this.ordersModel.isEmptyField}}
           @faIcon='plus'
           @onClick={{this.onSave}}
         />
-        <Shared::Buttons @faIcon='xmark' @onClick={{this.clear}} />
+        <Shared::Button @faIcon='xmark' @onClick={{this.clear}} />
       </td>
     </tr>
   </tbody>
