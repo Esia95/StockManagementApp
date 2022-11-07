@@ -43,7 +43,11 @@
             @options={{this.targets}}
             @selected={{this.ordersModel.targets}}
             @onChange={{set this.ordersModel 'targets'}}
-          />
+            as |value|
+          >
+            {{value}}
+          </Shared::PowerSelectMultiple>
+
         {{/if}}
       </td>
     </tr>
