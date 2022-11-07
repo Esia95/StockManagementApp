@@ -1,0 +1,9 @@
+<input
+  class='form-control'
+  type={{@type}}
+  placeholder={{@placeholder}}
+  value={{@value}}
+  checked={{@checked}}
+  {{on 'input' this.onChange}}
+  ...attributes
+/>

@@ -2,59 +2,52 @@
   <tbody>
     <tr>
       <td>
-        <PowerSelect
-          @searchEnabled={{true}}
-          @options={{this.articles}}
+        <Shared::PowerSelect
           @placeholder='Select article'
+          @options={{this.articles}}
           @selected={{this.selectedArticle}}
-          @searchField='name'
           @onChange={{this.onChangeArticle}}
-          as |article|
+          as |value|
         >
-          {{article.name}}
-        </PowerSelect>
+          {{value.name}}
+        </Shared::PowerSelect>
       </td>
 
       <td>
-        <PowerSelect
-          @searchEnabled={{true}}
-          @options={{this.count}}
+        <Shared::PowerSelect
           @placeholder='Select amount'
+          @options={{this.count}}
           @selected={{this.ordersModel.count}}
-          @searchField='name'
           @onChange={{set this.ordersModel 'count'}}
-          as |count|
+          as |value|
         >
-          {{count}}
-        </PowerSelect>
+          {{value}}
+        </Shared::PowerSelect>
       </td>
 
       <td>
-        <PowerSelect
-          @searchEnabled={{true}}
+        <Shared::PowerSelect
+          @placeholder='Select amount'
           @options={{this.unit}}
-          @placeholder='Select unit'
           @selected={{this.ordersModel.unit}}
-          @searchField='name'
           @onChange={{set this.ordersModel 'unit'}}
-          as |unit|
+          as |value|
         >
-          {{unit}}
-        </PowerSelect>
+          {{value}}
+        </Shared::PowerSelect>
       </td>
       <td>
         {{#if (should-display-column @company 'targets')}}
-          <PowerSelectMultiple
-            @searchEnabled={{true}}
-            @options={{this.targets}}
+          <Shared::PowerSelectMultiple
             @placeholder='Select company'
+            @options={{this.targets}}
             @selected={{this.ordersModel.targets}}
-            @searchField='name'
             @onChange={{set this.ordersModel 'targets'}}
-            as |target|
+            as |value|
           >
-            {{target}}
-          </PowerSelectMultiple>
+            {{value}}
+          </Shared::PowerSelectMultiple>
+
         {{/if}}
       </td>
     </tr>
@@ -63,30 +56,21 @@
     <tr>
       <td>
         {{#if (should-display-column @company 'note')}}
-          <input
-            class='form-control'
-            type='text'
-            placeholder='Note'
-            aria-label='default input example'
-            value={{this.ordersModel.note}}
-            {{on 'input' (fn this.onPropertyChange 'note')}}
+          <Shared::Input
+            @placeholder='Note'
+            @value={{this.ordersModel.note}}
+            @onChange={{fn this.onPropertyChange 'note'}}
           />
         {{/if}}
       </td>
 
       <td>
-        <button
-          class='btn'
-          type='submit'
-          id='form-control'
+        <Shared::Button
           disabled={{this.ordersModel.isEmptyField}}
-          {{on 'click' this.onSave}}
-        >
-          <FaIcon @icon='plus' />
-        </button>
-        <button type='button' class='btn' {{on 'click' this.clear}}>
-          <FaIcon @icon='xmark' />
-        </button>
+          @faIcon='plus'
+          @onClick={{this.onSave}}
+        />
+        <Shared::Button @faIcon='xmark' @onClick={{this.clear}} />
       </td>
     </tr>
   </tbody>

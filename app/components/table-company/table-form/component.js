@@ -45,8 +45,8 @@ export default class TableCompanyTableFormComponent extends Component {
   }
 
   @action
-  onPropertyChange(propName, { target: { value } }) {
-    this.ordersModel[propName] = value;
+  onPropertyChange(key, value) {
+    this.ordersModel[key] = value;
   }
 
   @action

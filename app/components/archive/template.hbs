@@ -21,13 +21,10 @@
           {{/if}}
         </td>
         <td>
-          <button
-            class='btn'
-            type='button'
-            {{on 'click' (fn this.onDeleted order)}}
-          >
-            <FaIcon @icon='trash-can' />
-          </button>
+          <Shared::Button
+            @faIcon='trash-can'
+            @onClick={{fn this.onDeleted order}}
+          />
         </td>
       </tr>
     {{/each}}

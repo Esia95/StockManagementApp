@@ -37,23 +37,21 @@
         <td>
           <div class='form-check'>
             {{#if order.isOrdered}}
-              <input
-                id='flexCheckDefault'
+              <Shared::Input
                 class='form-check-input'
-                type='checkbox'
-                value=''
-                checked={{order.createdDate}}
-                {{on 'click' (fn this.onDateOrdered order)}}
+                @type='checkbox'
+                @value=''
+                @checked={{order.createdDate}}
+                @onChange={{fn this.onDateOrdered order}}
                 disabled
               />
             {{else}}
-              <input
-                id='flexCheckDefault'
+              <Shared::Input
                 class='form-check-input'
-                type='checkbox'
-                value=''
-                checked={{order.createdDate}}
-                {{on 'click' (fn this.onDateOrdered order)}}
+                @type='checkbox'
+                @value=''
+                @checked={{order.createdDate}}
+                @onChange={{fn this.onDateOrdered order}}
               />
             {{/if}}
           </div>
@@ -61,31 +59,22 @@
 
         <div class='input-group-sm' id='edit'>
           <td>
-            <button
-              class='btn'
-              type='button'
-              {{on 'click' (fn this.onShowModal order)}}
-            >
-              <FaIcon @icon='pen-to-square' />
-            </button>
+            <Shared::Button
+              @faIcon='pen-to-square'
+              @onClick={{fn this.onShowModal order}}
+            />
           </td>
           <td>
-            <button
-              class='btn'
-              type='button'
-              {{on 'click' (fn this.onArchive order)}}
-            >
-              <FaIcon @icon='box-archive' />
-            </button>
+            <Shared::Button
+              @faIcon='box-archive'
+              @onClick={{fn this.onArchive order}}
+            />
           </td>
           <td>
-            <button
-              class='btn'
-              type='button'
-              {{on 'click' (fn this.onDeleted order)}}
-            >
-              <FaIcon @icon='trash-can' />
-            </button>
+            <Shared::Button
+              @faIcon='trash-can'
+              @onClick={{fn this.onDeleted order}}
+            />
           </td>
         </div>
       </tr>
