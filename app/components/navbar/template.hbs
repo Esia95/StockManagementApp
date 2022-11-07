@@ -1,10 +1,7 @@
 <nav class='navbar navbar-expand-lg'>
+
   <div class='container-fluid'>
-    <LinkTo
-      class='navbar-brand'
-      @route='home.index'
-      data-test-navbar-home
-    >StockManagementApp</LinkTo>
+    <LinkTo class='navbar-brand' @route='home.index'>StockManagemnetApp</LinkTo>
     <button
       class='navbar-toggler'
       type='button'
@@ -16,35 +13,23 @@
     >
       <FaIcon @icon='grip-lines' @size='2x' />
     </button>
+
     <div class='collapse navbar-collapse' id='navbarNav'>
       <ul class='navbar-nav'>
         <li class='nav-item'>
-          <LinkTo
-            class='nav-link'
-            @route='home.orders'
-            data-test-navbar-orders
-          >Zamówienia</LinkTo>
+          <LinkTo class='nav-link' @route='home.orders'>Zamówienia</LinkTo>
         </li>
         <li class='nav-item'>
-          <LinkTo
-            class='nav-link'
-            @route='home.warehouse'
-            data-test-navbar-warehouse
-          >Magazyn</LinkTo>
+          <LinkTo class='nav-link' @route='home.warehouse'>Magazyn</LinkTo>
         </li>
         <li class='nav-item'>
-          <LinkTo
-            class='nav-link'
-            @route='home.archive'
-            data-test-navbar-archive
-          >Archiwum</LinkTo>
+          <LinkTo class='nav-link' @route='home.archive'>Archiwum</LinkTo>
         </li>
         <li class='nav-item'>
           <span
             role='button'
             class='nav-link'
             {{on 'click' this.onLogout}}
-            data-test-navbar-logout
           >Wyloguj się</span>
         </li>
       </ul>

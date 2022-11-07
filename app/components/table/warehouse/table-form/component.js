@@ -39,8 +39,8 @@ export default class TableWarehouseTableFormComponent extends Component {
   }
 
   @action
-  onPropertyChange(propName, { target: { value } }) {
-    this.stockModel[propName] = value;
+  onPropertyChange(key, value) {
+    this.stockModel[key] = value;
   }
 
   @action

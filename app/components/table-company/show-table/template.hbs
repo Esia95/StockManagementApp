@@ -1,34 +1,34 @@
 <table class='table table-striped container-fluid' id='show-table'>
   <thead>
     <tr>
-      <th scope='col'>Artykuły</th>
-      <th scope='col'>Ilość</th>
+      <th scope='col'>Article</th>
+      <th scope='col'>Amount</th>
 
       {{#if (should-display-column @company 'targets')}}
-        <th scope='col'>Miejsce</th>
+        <th scope='col'>Place</th>
       {{/if}}
 
       {{#if (should-display-column @company 'note')}}
-        <th scope='col'>Note</th>
+        <th scope='col' {{! data-test-company-note }}>Note</th>
       {{/if}}
 
-      <th scope='col'>Data zamówienia</th>
+      <th scope='col'>Date of order</th>
     </tr>
   </thead>
   <tbody>
-    {{#each this.isActiveOrders as |order|}}
+    {{#each this.isActiveOrders as |order index|}}
       <tr>
-        <td>{{order.article}}</td>
+        <td data-test-order-article={{index}}>{{order.article}}</td>
 
-        <td>{{order.count}} {{order.unit}}</td>
+        <td data-test-order-count={{index}}>{{order.count}} {{order.unit}}</td>
         {{#if (should-display-column @company 'targets')}}
-          <td>{{order.targets}}</td>
+          <td data-test-order-place={{index}}>{{order.targets}}</td>
         {{/if}}
         {{#if (should-display-column @company 'note')}}
-          <td>{{order.note}}</td>
+          <td data-test-order-notes={{index}}>{{order.note}}</td>
         {{/if}}
 
-        <td>
+        <td data-test-order-date={{index}}>
           {{#if order.isOrdered}}
             {{moment-format order.createdDate 'DD-MM-YYYY'}}
           {{/if}}
@@ -37,23 +37,21 @@
         <td>
           <div class='form-check'>
             {{#if order.isOrdered}}
-              <input
-                id='flexCheckDefault'
+              <Shared::Input
                 class='form-check-input'
-                type='checkbox'
-                value=''
-                checked={{order.createdDate}}
-                {{on 'click' (fn this.onDateOrdered order)}}
+                @type='checkbox'
+                @value=''
+                @checked={{order.createdDate}}
+                @onChange={{fn this.onDateOrdered order}}
                 disabled
               />
             {{else}}
-              <input
-                id='flexCheckDefault'
+              <Shared::Input
                 class='form-check-input'
-                type='checkbox'
-                value=''
-                checked={{order.createdDate}}
-                {{on 'click' (fn this.onDateOrdered order)}}
+                @type='checkbox'
+                @value=''
+                @checked={{order.createdDate}}
+                @onChange={{fn this.onDateOrdered order}}
               />
             {{/if}}
           </div>
@@ -61,38 +59,28 @@
 
         <div class='input-group-sm' id='edit'>
           <td>
-            <button
-              class='btn'
-              type='button'
-              {{on 'click' (fn this.onShowModal order)}}
-            >
-              <FaIcon @icon='pen-to-square' />
-            </button>
+            <Shared::Button
+              @faIcon='pen-to-square'
+              @onClick={{fn this.onShowModal order}}
+            />
           </td>
           <td>
-            <button
-              class='btn'
-              type='button'
-              {{on 'click' (fn this.onArchive order)}}
-            >
-              <FaIcon @icon='box-archive' />
-            </button>
+            <Shared::Button
+              @faIcon='box-archive'
+              @onClick={{fn this.onArchive order}}
+            />
           </td>
           <td>
-            <button
-              class='btn'
-              type='button'
-              {{on 'click' (fn this.onDeleted order)}}
-            >
-              <FaIcon @icon='trash-can' />
-            </button>
+            <Shared::Button
+              @faIcon='trash-can'
+              @onClick={{fn this.onDeleted order}}
+            />
           </td>
         </div>
       </tr>
     {{/each}}
   </tbody>
 </table>
-{{! </div> }}
 
 {{#if this.isShowModal}}
   <TableCompany::ShowTable::Modal

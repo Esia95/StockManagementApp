@@ -2,67 +2,56 @@
   <tbody>
     <tr>
       <td>
-        <PowerSelect
-          @searchEnabled={{true}}
+        <Shared::PowerSelect
+          @placeholder='Select article'
           @options={{this.articles}}
-          @placeholder='Wybierz art.'
           @selected={{this.selectedArticle}}
-          @searchField='name'
           @onChange={{this.onChangeArticle}}
-          as |article|
+          as |value|
         >
-          {{article.name}}
-        </PowerSelect>
+          {{value.name}}
+        </Shared::PowerSelect>
       </td>
-
       <td>
-        <PowerSelect
-          @searchEnabled={{true}}
+        <Shared::PowerSelect
+          @placeholder='Select amount'
           @options={{this.count}}
-          @placeholder='Wybierz ilość'
           @selected={{this.stockModel.count}}
-          @searchField='name'
           @onChange={{set this.stockModel 'count'}}
-          as |count|
+          as |value|
         >
-          {{count}}
-        </PowerSelect>
+          {{value}}
+        </Shared::PowerSelect>
       </td>
-
       <td>
-        <PowerSelect
-          @searchEnabled={{true}}
+        <Shared::PowerSelect
+          @placeholder='Select unit'
           @options={{this.unit}}
-          @placeholder='Wybierz jednostkę'
           @selected={{this.stockModel.unit}}
-          @searchField='name'
           @onChange={{set this.stockModel 'unit'}}
-          as |unit|
+          as |value|
         >
-          {{unit}}
-        </PowerSelect>
+          {{value}}
+        </Shared::PowerSelect>
       </td>
-
     </tr>
   </tbody>
 
   <tbody>
     <tr>
       <td>
-        <input
-          class='form-control'
-          type='number'
-          placeholder='Cena produktu'
-          aria-label='default input example'
-          value={{this.stockModel.price}}
-          {{on 'input' (fn this.onPropertyChange 'price')}}
+        <Shared::Input
+          @type='number'
+          @placeholder='Product price'
+          @value={{this.stockModel.price}}
+          @onChange={{fn this.onPropertyChange 'price'}}
         />
       </td>
       <td>
         <label>
           <PikadayInput
             class='form-control form'
-            placeholder='Wybierz datę'
+            placeholder='Select a date'
             @format='DD-MM-YYYY'
             @value={{this.stockModel.invoiceDate}}
             @onSelection={{set this.stockModel 'invoiceDate'}}
@@ -70,13 +59,10 @@
         </label>
       </td>
       <td>
-        <input
-          class='form-control'
-          type='text'
-          placeholder='Nr. faktury'
-          aria-label='default input example'
-          value={{this.stockModel.invoice}}
-          {{on 'input' (fn this.onPropertyChange 'invoice')}}
+        <Shared::Input
+          @placeholder='No. invoices'
+          @value={{this.stockModel.invoice}}
+          @onChange={{fn this.onPropertyChange 'invoice'}}
         />
       </td>
     </tr>
@@ -84,18 +70,11 @@
 </div>
 
 <div>
-  <button
-    class='btn btn-primary'
-    type='submit'
-    id='form-control'
+  <Shared::Button
     disabled={{this.stockModel.isEmptyField}}
-    {{on 'click' this.onSave}}
-  >
-    <FaIcon @icon='plus' />
-  </button>
-
-  <button type='button' class='btn btn-primary' {{on 'click' this.clear}}>
-    <FaIcon @icon='xmark' />
-  </button>
-
+    @faIcon='plus'
+    @label='Add'
+    @onClick={{this.onSave}}
+  />
+  <Shared::Button @faIcon='xmark' @label='Delete' @onClick={{this.clear}} />
 </div>

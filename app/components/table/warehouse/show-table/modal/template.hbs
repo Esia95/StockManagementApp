@@ -1,90 +1,99 @@
 <ModalDialog @translucentOverlay={{true}}>
-  <Table::Warehouse::ShowTable @warehouseOrders={{this.warehouseOrders}} />
+  <div class='container'>
+    <thead>
+      <tr>
+        <th scope='col'>Articles</th>
+        <th scope='col'>Amount</th>
+        <th scope='col'>Price/szt</th>
+        <th scope='col'>Date of order</th>
+        <th scope='col'>No. invoice</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <tr>
-      <td><div class='mb-3 row'>
-          <label for='username' class='col-sm-2 col-form-label'></label>
-          <div class='col-sm-10'>
-            <input
-              type='text'
-              class='form-control'
-              id='article'
-              placeholder='artykuł'
-              value={{@order.article}}
-              disabled
-            />
+    <tbody>
+      <tr>
+        <td>
+          <div class='mb-3 row'>
+            <label for='username' class='col-sm-2 col-form-label'></label>
+            <div class='col-sm-10'>
+              <Shared::Input
+                @type='text'
+                @placeholder='Article'
+                @value={{@order.article}}
+                disabled
+              />
+            </div>
           </div>
-        </div></td>
-      <td><div class='mb-3 row'>
-          <label for='username' class='col-sm-2 col-form-label'></label>
-          <div class='col-sm-10'>
-            <input
-              type='number'
-              class='form-control'
-              id='count'
-              placeholder='ilość'
-              value={{@order.count}}
-              {{on 'input' (fn this.onPropertyChange 'count')}}
-            />
+        </td>
+        <td>
+          <div class='mb-3 row'>
+            <label for='username' class='col-sm-2 col-form-label'></label>
+            <div class='col-sm-10'>
+              <Shared::Input
+                @type='number'
+                @placeholder='Amount'
+                @value={{@order.count}}
+                @onChange={{fn this.onPropertyChange 'count'}}
+              />
+            </div>
           </div>
-        </div></td>
-      <td><div class='mb-3 row'>
-          <label for='username' class='col-sm-2 col-form-label'></label>
-          <div class='col-sm-10'>
-            <input
-              type='number'
-              class='form-control'
-              id='price'
-              placeholder='cena'
-              value={{@order.price}}
-              {{on 'input' (fn this.onPropertyChange 'price')}}
-            />
+        </td>
+        <td>
+          <div class='mb-3 row'>
+            <label for='username' class='col-sm-2 col-form-label'></label>
+            <div class='col-sm-10'>
+              <Shared::Input
+                @type='number'
+                @placeholder='Price'
+                @value={{@order.price}}
+                @onChange={{fn this.onPropertyChange 'price'}}
+              />
+            </div>
           </div>
-        </div></td>
-      <td><div class='mb-3 row'>
-          <label for='username' class='col-sm-2 col-form-label'></label>
-          <div class='col-sm-10'>
-            <input
-              type='text'
-              class='form-control'
-              id='date'
-              placeholder='Data'
-              value={{moment-format @order.invoiceDate 'DD-MM-YYYY'}}
-              disabled
-            />
+        </td>
+        <td>
+          <div class='mb-3 row'>
+            <label for='username' class='col-sm-2 col-form-label'></label>
+            <div class='col-sm-10'>
+              <Shared::Input
+                @type='text'
+                @placeholder='Date'
+                @value={{moment-format @order.invoiceDate 'DD-MM-YYYY'}}
+                disabled
+              />
+            </div>
           </div>
-        </div></td>
-      <td><div class='mb-3 row'>
-          <label for='username' class='col-sm-2 col-form-label'></label>
-          <div class='col-sm-10'>
-            <input
-              type='text'
-              class='form-control'
-              id='invoice'
-              placeholder='Nr. faktury'
-              value={{@order.invoice}}
-              {{on 'input' (fn this.onPropertyChange 'invoice')}}
-            />
+        </td>
+        <td>
+          <div class='mb-3 row'>
+            <label for='username' class='col-sm-2 col-form-label'></label>
+            <div class='col-sm-10'>
+              <Shared::Input
+                @type='text'
+                @placeholder='No. invoice'
+                @value={{@order.invoice}}
+                @onChange={{fn this.onPropertyChange 'invoice'}}
+              />
+            </div>
           </div>
-        </div></td>
-    </tr>
-  </tbody>
+        </td>
+      </tr>
+    </tbody>
 
-  <div class='mb-3 row'>
-    <div class='d-flex'>
-      <button
-        type='submit'
-        class='btn btn-primary w-50 me-1'
-        disabled={{this.shouldDisabledButton}}
-        {{on 'click' this.onSave}}
-      >Save</button>
-      <button
-        type='button'
-        class='btn btn-danger w-50 ms-1'
-        {{on 'click' this.onClose}}
-      >Cancel</button>
+    <div class='mb-3 row'>
+      <div class='d-flex'>
+        <Shared::Button
+          class='btn-primary w-50 me-1'
+          disabled={{this.shouldDisabledButton}}
+          @label='Save'
+          @onClick={{this.onSave}}
+        />
+        <Shared::Button
+          class='btn-primary w-50 me-1'
+          @label='Cancel'
+          @onClick={{this.onClose}}
+        />
+      </div>
     </div>
   </div>
-
 </ModalDialog>
