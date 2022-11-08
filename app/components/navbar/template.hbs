@@ -1,7 +1,7 @@
 <nav class='navbar navbar-expand-lg'>
 
   <div class='container-fluid'>
-    <LinkTo class='navbar-brand' @route='home.index'>
+    <LinkTo class='navbar-brand' @route='home.index' data-test-navbar-home>
       STOCK MANAGEMENT APP
     </LinkTo>
 
@@ -20,22 +20,35 @@
     <div class='collapse navbar-collapse' id='navbarNav'>
       <ul class='navbar-nav'>
         <li class='nav-item'>
-          <LinkTo class='nav-link' @route='home.orders'>
+          <LinkTo class='nav-link' @route='home.orders' data-test-navbar-orders>
             ZAMÓWIENIA
           </LinkTo>
         </li>
         <li class='nav-item'>
-          <LinkTo class='nav-link' @route='home.warehouse'>
+          <LinkTo
+            class='nav-link'
+            @route='home.warehouse'
+            data-test-navbar-warehouse
+          >
             MAGAZYN
           </LinkTo>
         </li>
         <li class='nav-item'>
-          <LinkTo class='nav-link' @route='home.archive'>
+          <LinkTo
+            class='nav-link'
+            @route='home.archive'
+            data-test-navbar-archive
+          >
             ARCHIWUM
           </LinkTo>
         </li>
         <li class='nav-item'>
-          <span role='button' class='nav-link' {{on 'click' this.onLogout}}>
+          <span
+            role='button'
+            class='nav-link'
+            {{on 'click' this.onLogout}}
+            data-test-navbar-logout
+          >
             WYLOGUJ SIĘ
           </span>
         </li>
