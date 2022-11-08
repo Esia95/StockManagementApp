@@ -10,8 +10,8 @@ export default class TableWarehouseShowTableModal extends Component {
   }
 
   @action
-  onPropertyChange(propName, { target: { value } }) {
-    this.args.order[propName] = value;
+  onPropertyChange(key, value) {
+    this.args.order[key] = value;
   }
 
   @action

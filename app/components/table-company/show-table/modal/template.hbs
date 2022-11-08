@@ -3,16 +3,16 @@
 
     <thead>
       <tr>
-        <th scope='col'>Articles</th>
-        <th scope='col'>Amount</th>
+        <th scope='col'>Artykuł</th>
+        <th scope='col'>Ilość</th>
         {{#if (should-display-column @company 'targets')}}
-          <th scope='col'>Company</th>
+          <th scope='col'>Firma</th>
         {{/if}}
 
         {{#if (should-display-column @company 'note')}}
-          <th scope='col'>Note</th>
+          <th scope='col'>Notatka</th>
         {{/if}}
-        <th scope='col'>Date of order</th>
+        <th scope='col'>Data zamówienia</th>
       </tr>
     </thead>
 
@@ -24,7 +24,7 @@
           <div class='col-sm-10'>
             <Shared::Input
               @type='text'
-              @placeholder='Article'
+              @placeholder='Artykuł'
               @value={{@order.article}}
               disabled
             />
@@ -36,7 +36,7 @@
           <div class='col-sm-10'>
             <Shared::Input
               @type='number'
-              @placeholder='Amount'
+              @placeholder='Ilość'
               @value={{@order.count}}
               @onChange={{fn this.onPropertyChange 'count'}}
             />
@@ -49,7 +49,7 @@
             <div class='col-sm-10'>
               <Shared::Input
                 @type='text'
-                @placeholder='Company'
+                @placeholder='Firma'
                 @value={{@order.targets}}
                 @onChange={{fn this.onPropertyChange 'targets'}}
               />
@@ -63,7 +63,7 @@
             <div class='col-sm-10'>
               <Shared::Input
                 @type='text'
-                @placeholder='Note'
+                @placeholder='Notatka'
                 @value={{@order.note}}
                 @onChange={{fn this.onPropertyChange 'note'}}
               />
@@ -76,7 +76,7 @@
           <div class='col-sm-10'>
             <Shared::Input
               @type='text'
-              @placeholder='Date'
+              @placeholder='Data'
               @value={{moment-format @order.invoiceDate 'DD-MM-YYYY'}}
               disabled
             />

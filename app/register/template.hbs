@@ -3,18 +3,15 @@
 <Header>Register</Header>
 
 <FormGenerator @onSubmit={{this.onSubmit}} as |FG|>
-  <FG.input
-    @label='Username'
-    @onChange={{fn this.onPropertyChange 'username'}}
-  />
+  <FG.input @label='Imię' @onChange={{fn this.onPropertyChange 'username'}} />
   <FG.input @label='Email' @onChange={{fn this.onPropertyChange 'email'}} />
   <FG.input
-    @label='Password'
+    @label='Hasło'
     @type='password'
     @onChange={{fn this.onPropertyChange 'password'}}
   />
 
-  <FG.button @label='Register' @type='submit' />
+  <FG.button @label='Zarejestruj się' @type='submit' />
 
   <FG.container>
     <span>Mam juz konto. </span><LinkTo @route='login'>Zaloguj się.</LinkTo>
