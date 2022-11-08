@@ -2,7 +2,7 @@
 
   <div class='container-fluid'>
     <LinkTo class='navbar-brand' @route='home.index'>
-      StockManagemnetApp
+      STOCK MANAGEMENT APP
     </LinkTo>
 
     <button
@@ -21,22 +21,22 @@
       <ul class='navbar-nav'>
         <li class='nav-item'>
           <LinkTo class='nav-link' @route='home.orders'>
-            Orders
+            ZAMÓWIENIA
           </LinkTo>
         </li>
         <li class='nav-item'>
           <LinkTo class='nav-link' @route='home.warehouse'>
-            Warehouse
+            MAGAZYN
           </LinkTo>
         </li>
         <li class='nav-item'>
           <LinkTo class='nav-link' @route='home.archive'>
-            Archives
+            ARCHIWUM
           </LinkTo>
         </li>
         <li class='nav-item'>
           <span role='button' class='nav-link' {{on 'click' this.onLogout}}>
-            Log Out
+            WYLOGUJ SIĘ
           </span>
         </li>
       </ul>

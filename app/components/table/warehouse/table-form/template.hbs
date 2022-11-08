@@ -3,7 +3,7 @@
     <tr>
       <td>
         <Shared::PowerSelect
-          @placeholder='Select article'
+          @placeholder='Wybierz artykuł'
           @options={{this.articles}}
           @selected={{this.selectedArticle}}
           @onChange={{this.onChangeArticle}}
@@ -14,7 +14,7 @@
       </td>
       <td>
         <Shared::PowerSelect
-          @placeholder='Select amount'
+          @placeholder='Wybierz ilość'
           @options={{this.count}}
           @selected={{this.stockModel.count}}
           @onChange={{set this.stockModel 'count'}}
@@ -25,7 +25,7 @@
       </td>
       <td>
         <Shared::PowerSelect
-          @placeholder='Select unit'
+          @placeholder='Wybierz jednostkę'
           @options={{this.unit}}
           @selected={{this.stockModel.unit}}
           @onChange={{set this.stockModel 'unit'}}
@@ -42,7 +42,7 @@
       <td>
         <Shared::Input
           @type='number'
-          @placeholder='Product price'
+          @placeholder='Cena produktu'
           @value={{this.stockModel.price}}
           @onChange={{fn this.onPropertyChange 'price'}}
         />
@@ -51,7 +51,7 @@
         <label>
           <PikadayInput
             class='form-control form'
-            placeholder='Select a date'
+            placeholder='Data faktury'
             @format='DD-MM-YYYY'
             @value={{this.stockModel.invoiceDate}}
             @onSelection={{set this.stockModel 'invoiceDate'}}
@@ -60,7 +60,7 @@
       </td>
       <td>
         <Shared::Input
-          @placeholder='No. invoices'
+          @placeholder='Nr. faktury'
           @value={{this.stockModel.invoice}}
           @onChange={{fn this.onPropertyChange 'invoice'}}
         />
@@ -73,8 +73,8 @@
   <Shared::Button
     disabled={{this.stockModel.isEmptyField}}
     @faIcon='plus'
-    @label='Add'
+    @label='Dodaj'
     @onClick={{this.onSave}}
   />
-  <Shared::Button @faIcon='xmark' @label='Delete' @onClick={{this.clear}} />
+  <Shared::Button @faIcon='xmark' @label='Wyczyść' @onClick={{this.clear}} />
 </div>

@@ -3,7 +3,7 @@
     <tr>
       <td>
         <Shared::PowerSelect
-          @placeholder='Select article'
+          @placeholder='Wybierz artykuł'
           @options={{this.articles}}
           @selected={{this.selectedArticle}}
           @onChange={{this.onChangeArticle}}
@@ -15,7 +15,7 @@
 
       <td>
         <Shared::PowerSelect
-          @placeholder='Select amount'
+          @placeholder='Wybierz ilość'
           @options={{this.count}}
           @selected={{this.ordersModel.count}}
           @onChange={{set this.ordersModel 'count'}}
@@ -27,7 +27,7 @@
 
       <td>
         <Shared::PowerSelect
-          @placeholder='Select amount'
+          @placeholder='Wybierz jednostkę'
           @options={{this.unit}}
           @selected={{this.ordersModel.unit}}
           @onChange={{set this.ordersModel 'unit'}}
@@ -39,7 +39,7 @@
       <td>
         {{#if (should-display-column @company 'targets')}}
           <Shared::PowerSelectMultiple
-            @placeholder='Select company'
+            @placeholder='Wybierz firmę'
             @options={{this.targets}}
             @selected={{this.ordersModel.targets}}
             @onChange={{set this.ordersModel 'targets'}}
@@ -57,7 +57,7 @@
       <td>
         {{#if (should-display-column @company 'note')}}
           <Shared::Input
-            @placeholder='Note'
+            @placeholder='Notatka'
             @value={{this.ordersModel.note}}
             @onChange={{fn this.onPropertyChange 'note'}}
           />
