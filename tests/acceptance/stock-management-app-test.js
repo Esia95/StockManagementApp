@@ -11,7 +11,7 @@ module('Acceptance | stock management app', function (hooks) {
     assert.strictEqual(currentURL(), '/');
     assert.dom('h2').hasText('ŁAD I HARMONIA');
 
-    assert.dom('[data-test-navbar-home]').hasText('StockManagementApp');
+    assert.dom('[data-test-navbar-home]').hasText('STOCK MANAGEMENT APP');
     await click('[data-test-navbar-home]');
     assert.strictEqual(currentURL(), '/');
 
@@ -27,6 +27,6 @@ module('Acceptance | stock management app', function (hooks) {
     await click('[data-test-navbar-archive]');
     assert.strictEqual(currentURL(), '/archive');
 
-    assert.dom('[data-test-navbar-logout]').hasText('Wyloguj się');
+    assert.dom('[data-test-navbar-logout]').hasText('WYLOGUJ SIĘ');
   });
 });
